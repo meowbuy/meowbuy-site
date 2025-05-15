@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>meowbuy 🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購</title>
   <style>
-    /* 字體改用 Google Noto Sans TC，提升中文顯示 */
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
+    /* 全站基本設定 */
     body {
       font-family: 'Noto Sans TC', Arial, sans-serif;
       margin: 0;
@@ -16,6 +16,7 @@
       color: #333;
       scroll-behavior: smooth;
     }
+    /* 頁首 */
     header {
       background-color: #ffe4ec;
       padding: 2rem 1rem;
@@ -28,14 +29,16 @@
       margin: 0;
       line-height: 1.3;
     }
+    /* 固定導覽列 */
     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
       background-color: #f8f9fa;
       padding: 1rem 0;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       box-shadow: 0 2px 8px rgba(214,51,132,0.15);
+      z-index: 1000;
     }
     nav a {
       margin: 0 1rem;
@@ -53,10 +56,11 @@
       color: #fff;
       outline: none;
     }
+    /* 區塊共用樣式 */
     section {
-      padding: 2rem 1rem;
+      padding: 100px 1rem 60px; /* 頂部留空給固定nav */
       max-width: 960px;
-      margin: 2rem auto;
+      margin: 0 auto 40px;
       background-color: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(255,77,109,0.15);
@@ -69,6 +73,7 @@
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
+    /* 商品區塊 */
     .product-grid {
       display: flex;
       flex-wrap: wrap;
@@ -126,6 +131,7 @@
       text-decoration: underline;
       outline: none;
     }
+    /* 頁尾 */
     footer {
       background-color: #ffe4ec;
       text-align: center;
@@ -134,14 +140,12 @@
       color: #555;
       margin-top: 3rem;
     }
-
     /* 響應式 */
     @media (max-width: 600px) {
       .product-card {
         width: 100%;
       }
       nav a {
-        display: inline-block;
         margin: 0 0.5rem;
         padding: 6px 8px;
         font-size: 0.9rem;
