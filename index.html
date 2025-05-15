@@ -1,129 +1,147 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎀密探ㄚ頭代GO🎀</title>
-  <style>
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      background-color: #fdf7f9;
-      color: #4a4a4a;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #fce4ec;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      color: #d81b60;
-    }
-    nav {
-      background-color: #f8bbd0;
-      text-align: center;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem;
-    }
-    .contact-section {
-      background-color: #fef6fa;
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-    .contact-box {
-      text-align: center;
-    }
-    .contact-box img {
-      width: 150px;
-      border-radius: 1rem;
-    }
-    .contact-box a {
-      color: #f06292;
-      text-decoration: underline;
-    }
-    footer {
-      background-color: #f8bbd0;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meowbuy 商品展示</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #fffafc;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fce4ec;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #d81b60;
+        }
+        .category {
+            padding: 20px;
+        }
+        .category h2 {
+            border-bottom: 2px solid #f8bbd0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #d81b60;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .item {
+            border: 1px solid #f8bbd0;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #fff0f5;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+        }
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .item h3 {
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+        }
+        .item p {
+            margin: 0.3em 0;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購</h1>
+    <h1>🌸 meowbuy 展示型代購網站 🌸</h1>
 </header>
 
-<nav>
-  <a href="#home">首頁</a>
-  <a href="#products">商品區</a>
-  <a href="#custom">客製代購</a>
-  <a href="#contact">聯絡我們</a>
-</nav>
-
-<section id="home">
-  <h2>歡迎來到 🎀密探ㄚ頭🎀 的代購天地！</h2>
-  <p>本網站主打來自新加坡、馬來西亞的特色零食、泡麵與精選小物，角色主題風格溫暖可愛、結合手繪插畫感，讓你邊逛邊療癒。</p>
-</section>
-
-<section id="products">
-  <h2>商品分類</h2>
-  <ul>
-    <li>🧁 人氣抹醬 / 咖椰</li>
-    <li>🍜 泡麵 / 快煮包 / 調味醬</li>
-    <li>🍬 零食 / 伴手禮 / 餅乾糖果</li>
-    <li>🧴 保健品 / 藥妝小物</li>
-    <li>☕ 沖泡飲品 / 茶包</li>
-    <li>💸 出清折扣區（即期商品）</li>
-    <li>🎀 限量精選・角色主題專區</li>
-  </ul>
-  <p>每樣商品皆搭配可愛標籤與國旗圖示（🇸🇬 / 🇲🇾）區分來源國家。</p>
-</section>
-
-<section id="custom">
-  <h2>客製代購說明</h2>
-  <p>想找特定商品或需要客製代購？歡迎透過 LINE 聯絡我！我們將依照您的需求提供代尋、報價與代購服務。</p>
-</section>
-
-<section id="contact" class="contact-section">
-  <h2 style="text-align: center; color: #d881a7;">聯絡我們</h2>
-  <div class="contact-container">
-    <div class="contact-box">
-      <h3 style="color: #9a6c9d;">加入 LINE 社群</h3>
-      <img src="密探ㄚ頭代GO~新加坡･馬來西亞代購QrCode.jpg" alt="LINE社群QR">
-      <p><a href="https://line.me/ti/g2/bFgF8P3oSCR54GVmgkIYU3Q1tuzKYmPw6SlrlA" target="_blank">點我加入社群</a></p>
+<div class="category">
+    <h2>🌸 泡麵 / 調味包</h2>
+    <div class="product">
+        <div class="item">
+            <img src="images/328laksa袋裝圖.jpg" alt="328laksa">
+            <h3>☆328加東叻沙 x Nissin日清泡麵組☆</h3>
+            <p>國家：🇸🇬 新加坡</p>
+            <p>價格：NT$ 380</p>
+        </div>
+        <div class="item">
+            <img src="images/Houten Chilli Tapioca Chips袋8包35g.jpg" alt="Houten Chips">
+            <h3>☆豪登叁巴木薯片 8包/袋☆</h3>
+            <p>國家：🇸🇬 新加坡</p>
+            <p>價格：NT$ 260</p>
+        </div>
     </div>
-    <div class="contact-box">
-      <h3 style="color: #9a6c9d;">加我私人 LINE</h3>
-      <img src="file-K397183FK1JrwCDTjnagnJ.jpg" alt="私人LINE QR">
-      <p><a href="https://line.me/ti/p/cTE_jv9Vcz" target="_blank">點我加好友</a></p>
-    </div>
-  </div>
-</section>
+</div>
 
-<footer>
-  <p>© 2025 🎀密探ㄚ頭代GO🎀｜新加坡・馬來西亞代購</p>
-</footer>
+<div class="category">
+    <h2>🌸 零食 / 伴手禮 / 餅乾糖果</h2>
+    <div class="product">
+        <div class="item">
+            <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="beryl's">
+            <h3>☆beryl's 杏仁苦甜巧克力（黑棕蓋）450g☆</h3>
+            <p>國家：馬來西亞</p>
+            <p>價格：NT$ 390</p>
+        </div>
+        <div class="item">
+            <img src="images/beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg" alt="beryl's mix">
+            <h3>☆beryl's 杏仁綜合巧克力（粉紅蓋）370g☆</h3>
+            <p>國家：馬來西亞</p>
+            <p>價格：NT$ 390</p>
+        </div>
+    </div>
+</div>
+
+<div class="category">
+    <h2>🌸 人氣抹醬 / 咖椰</h2>
+    <div class="product">
+        <div class="item">
+            <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee 傳統">
+            <h3>☆Hock Kee 傳統海南咖椰醬 220g☆</h3>
+            <p>國家：馬來西亞</p>
+            <p>價格：NT$ 290</p>
+        </div>
+        <div class="item">
+            <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg" alt="Hock Kee 香蘭">
+            <h3>☆Hock Kee 香蘭咖椰醬 220g☆</h3>
+            <p>國家：馬來西亞</p>
+            <p>價格：NT$ 290</p>
+        </div>
+        <div class="item">
+            <img src="images/華陽香椰咖椰醬 270g.jpg" alt="華陽香椰">
+            <h3>☆華陽 Oriental Kopi Kaya 香椰咖椰醬 270g☆</h3>
+            <p>國家：馬來西亞</p>
+            <p>價格：NT$ 300</p>
+        </div>
+        <div class="item">
+            <img src="images/華陽斑蘭咖椰醬 270g.jpg" alt="華陽斑蘭">
+            <h3>☆華陽 Oriental Kopi Kaya 斑蘭咖椰醬 270g☆</h3>
+            <p>國家：馬來西亞</p>
+            <p>價格：NT$ 300</p>
+        </div>
+    </div>
+</div>
+
+<div class="category">
+    <h2>🌸 限量精選・角色主題專區</h2>
+    <div class="product">
+        <div class="item">
+            <img src="images/LFC Hello Kitty.jpg" alt="LFC Hello Kitty">
+            <h3>☆利物浦~LFC Hello Kitty 10' Plush☆</h3>
+            <p>國家：新加坡</p>
+            <p>價格：NT$ 290</p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
