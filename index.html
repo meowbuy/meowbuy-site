@@ -1,89 +1,112 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>meowbuy 首頁 Home</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>meowbuy 首頁 Home</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+  body {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    margin: 0; padding: 0;
+    background-color: #fff0f5;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(214,51,132,0.15);
+    z-index: 1000;
+  }
+  nav a {
+    margin: 0 1rem;
+    color: #d63384;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #d63384;
+    color: #fff;
+    outline: none;
+  }
+  header {
+    background-color: #ffe4ec;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 60px;
+  }
+  header h1 {
+    font-size: 2.2rem;
+    color: #d63384;
+    margin: 0;
+    line-height: 1.3;
+  }
+  main {
+    padding: 20px 1rem 40px;
+    max-width: 960px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,77,109,0.15);
+    text-align: center;
+  }
+  h2 {
+    color: #d63384;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px dashed #ffc0cb;
+    padding-bottom: 0.5rem;
+  }
+
+  /* 響應式調整 */
+  @media (max-width: 768px) {
     body {
-      font-family: 'Noto Sans TC', Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #fff0f5;
-      color: #333;
-    }
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 60px;
-      background-color: #f8f9fa;
-      padding: 1rem 0;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(214,51,132,0.15);
-      z-index: 1000;
+      font-size: 14px;
     }
     nav a {
-      margin: 0 1rem;
-      color: #d63384;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 6px 12px;
-      border-radius: 20px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    nav a:hover, nav a:focus {
-      background-color: #d63384;
-      color: #fff;
-      outline: none;
-    }
-    header {
-      background-color: #ffe4ec;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-top: 60px; /* 避免 header 被 nav 遮擋 */
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+      padding: 6px 8px;
     }
     header h1 {
-      font-size: 2.2rem;
-      color: #d63384;
-      margin: 0;
-      line-height: 1.3;
-    }
-    main {
-      padding-top: 20px;
-      max-width: 960px;
-      margin: 2rem auto 4rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(255,77,109,0.15);
-      text-align: center;
+      font-size: 1.6rem;
     }
     h2 {
-      color: #d63384;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      border-bottom: 3px dashed #ffc0cb;
-      padding-bottom: 0.5rem;
+      font-size: 1.4rem;
     }
-  </style>
+    main {
+      padding: 15px 1rem 30px;
+    }
+  }
+</style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">首頁 Home</a>
-    <a href="products.html">商品區 Products</a>
-    <a href="custom.html">客製代購 Personalized Shopping</a>
-    <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
-    <a href="contact.html">聯絡我們 Contact</a>
-  </nav>
+<nav>
+  <a href="index.html">首頁 Home</a>
+  <a href="products.html">商品區 Products</a>
+  <a href="custom.html">客製代購 Personalized Shopping</a>
+  <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
+  <a href="contact.html">聯絡我們 Contact</a>
+</nav>
 
-  <header>
-    <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
-  </header>
+<header>
+  <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
+</header>
 
-  <main>
-    <h2>🎀 歡迎來到 meowbuy！</h2>
-    <p>我們專門代購新加坡、馬來西亞超人氣美食與角色商品，萌萌喵陪你一起輕鬆選購💖</p>
-  </main>
+<main>
+  <h2>🎀 歡迎來到 🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 </h2>
+  <p>我們專門代購新加坡、馬來西亞超人氣美食與角色商品，🎀密探ㄚ頭🎀陪 您一起輕鬆選購💖</p>
+</main>
 </body>
 </html>
