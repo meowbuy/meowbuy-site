@@ -1,106 +1,151 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>meowbuy</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>meowbuy 🌸 密探ㄚ頭代Go</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    header {
+      background-color: #ffe4ec;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2rem;
+      color: #d63384;
+    }
+    nav {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      color: #d63384;
+      border-bottom: 2px dashed #ffc0cb;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .product-card {
+      background-color: #ffffff;
+      border: 1px solid #ffc0cb;
+      border-radius: 12px;
+      padding: 1rem;
+      width: calc(100% / 2 - 2rem);
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    }
+    .product-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .product-card h3 {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      color: #cc3366;
+    }
+    .product-card p {
+      margin: 0.2rem 0;
+    }
+    footer {
+      background-color: #ffe4ec;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購展示型代購網站</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">首頁 Home</a></li>
-        <li><a href="#products">商品區 Products</a></li>
-        <li><a href="#custom">客製代購 Personalized Shopping</a></li>
-        <li><a href="#contact">聯絡我們 Contact</a></li>
-        <li><a href="#love">Customer Love 💖</a></li>
-      </ul>
-    </nav>
+    <h1>🌸 meowbuy｜密探ㄚ頭代Go～新加坡・馬來西亞代購 🌸</h1>
   </header>
 
+  <nav>
+    <a href="#home">首頁 Home</a>
+    <a href="#products">商品區 Products</a>
+    <a href="#custom">Personalized Shopping</a>
+    <a href="#customer-love">Customer Love 💖</a>
+    <a href="#contact">聯絡我們 Contact</a>
+  </nav>
+
   <section id="home">
-    <div class="hero">
-      <h2>Welcome to meowbuy!</h2>
-      <p>可愛的代購世界・新馬特色商品這裡都有 🌏</p>
-    </div>
+    <h2 class="section-title">🎀 歡迎來到 meowbuy！</h2>
+    <p>我們專門代購新加坡、馬來西亞超人氣美食與角色商品，萌萌喵陪你一起輕鬆選購💖</p>
   </section>
 
   <section id="products">
-    <h2>🌸 商品區 Products</h2>
-
-    <h3>🌸 泡麵 / 調味包</h3>
-    <div class="product">
-      <img src="images/328laksa袋裝圖.jpg" alt="328 Laksa">
-      <p>☆328加東叻沙 x Nissin日清泡麵組 - 5包*113g /袋☆<br>🇸🇬 新加坡｜NT$ 380</p>
-    </div>
-    <div class="product">
-      <img src="images/Houten Chilli Tapioca Chips袋8包35g.jpg" alt="Houten Chips">
-      <p>☆豪登叁巴木薯片 - 8包*35g☆<br>🇸🇬 新加坡｜NT$ 260</p>
-    </div>
-
-    <h3>🌸 零食 / 伴手禮 / 餅乾糖果</h3>
-    <div class="product">
-      <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="Beryl's Black">
-      <p>☆beryl's 苦甜巧克力 450g☆<br>🇲🇾 馬來西亞｜NT$ 390</p>
-    </div>
-    <div class="product">
-      <img src="images/beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg" alt="Beryl's Pink">
-      <p>☆beryl's 綜合口味巧克力 370g☆<br>🇲🇾 馬來西亞｜NT$ 390</p>
-    </div>
-
-    <h3>🌸 人氣抹醬 / 咖椰</h3>
-    <div class="product">
-      <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee Original">
-      <p>☆Hock Kee 傳統海南咖椰醬 220g☆<br>🇲🇾 馬來西亞｜NT$ 290</p>
-    </div>
-    <div class="product">
-      <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg" alt="Hock Kee Pandan">
-      <p>☆Hock Kee 香蘭咖椰醬 220g☆<br>🇲🇾 馬來西亞｜NT$ 290</p>
-    </div>
-    <div class="product">
-      <img src="images/華陽香椰咖椰醬 270g.jpg" alt="Oriental Kaya Original">
-      <p>☆華陽 香椰咖椰醬 270g☆<br>🇲🇾 馬來西亞｜NT$ 300</p>
-    </div>
-    <div class="product">
-      <img src="images/華陽斑蘭咖椰醬 270g.jpg" alt="Oriental Kaya Pandan">
-      <p>☆華陽 斑蘭咖椰醬 270g☆<br>🇲🇾 馬來西亞｜NT$ 300</p>
-    </div>
-
-    <h3>🌸 限量精選・角色主題專區</h3>
-    <div class="product">
-      <img src="images/LFC Hello Kitty.jpg" alt="LFC Hello Kitty">
-      <p>☆LFC Hello Kitty 10吋娃娃☆<br>🇸🇬 新加坡｜NT$ 290</p>
+    <h2 class="section-title">📦 商品區 Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/328laksa袋裝圖.jpg" alt="328 Laksa">
+        <h3>☆328加東叻沙 x Nissin日清泡麵組☆</h3>
+        <p>分類：泡麵 🇸🇬 新加坡</p>
+        <p>價格：NT$ 380</p>
+      </div>
+      <div class="product-card">
+        <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="beryl's 黑棕蓋">
+        <h3>☆beryl's 杏仁苦甜巧克力（黑棕蓋）☆</h3>
+        <p>分類：零食 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 390</p>
+      </div>
+      <div class="product-card">
+        <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee 傳統咖椰">
+        <h3>☆Hock Kee 傳統海南咖椰醬☆</h3>
+        <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 290</p>
+      </div>
     </div>
   </section>
 
   <section id="custom">
-    <h2>🌸 客製代購 Personalized Shopping</h2>
-    <p>想找特別商品、限量寶物？歡迎截圖私訊，我們幫你尋寶！</p>
+    <h2 class="section-title">🛒 Personalized Shopping</h2>
+    <p>有特別想找的商品嗎？歡迎私訊我們幫您客製代購！支援詢問、報價與多商品整併寄送服務。</p>
+  </section>
+
+  <section id="customer-love">
+    <h2 class="section-title">💬 Customer Love 💖</h2>
+    <p>來看看客人們的實拍回饋與甜甜互動記錄吧！</p>
+    <p>（本區塊將展示客人回饋圖片、對話截圖、開箱照片等）</p>
   </section>
 
   <section id="contact">
-    <h2>🌸 聯絡我們 Contact</h2>
-    <p>📬 加入我們的 LINE 社群或私訊詢問！</p>
-    <p><a href="https://line.me/ti/g2/bFgF8P3oSCR54GVmgkIYU3Q1tuzKYmPw6SlrlA">LINE 社群連結</a></p>
-    <p><a href="https://line.me/ti/p/cTE_jv9Vcz">私人 LINE 連結</a></p>
-    <img src="images/line-group-qr.png" alt="LINE 社群 QR Code">
-    <img src="images/line-private-qr.png" alt="LINE 私人 QR Code">
-  </section>
-
-  <section id="love">
-    <h2>🌸 Customer Love 💖</h2>
-    <p>看看客人們的可愛回饋與實拍照，感受來自新馬商品的魅力 ✨</p>
-    <!-- 放置回饋圖片的區塊 -->
-    <div class="gallery">
-      <img src="images/customer1.jpg" alt="Customer Feedback 1">
-      <img src="images/customer2.jpg" alt="Customer Feedback 2">
-    </div>
+    <h2 class="section-title">📬 聯絡我們 Contact</h2>
+    <p>歡迎加入我們的 LINE 社群與私訊聯絡！</p>
+    <ul>
+      <li><a href="https://line.me/ti/g2/bFgF8P3oSCR54GVmgkIYU3Q1tuzKYmPw6SlrlA" target="_blank">加入 LINE 社群</a></li>
+      <li><a href="https://line.me/ti/p/cTE_jv9Vcz" target="_blank">私人一對一聯絡</a></li>
+    </ul>
   </section>
 
   <footer>
-    <p>© 2025 🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 . All rights reserved.</p>
+    <p>© 2025 meowbuy｜密探ㄚ頭代Go｜Powered by 甜甜 💖</p>
   </footer>
 </body>
 </html>
