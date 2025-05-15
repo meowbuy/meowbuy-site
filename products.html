@@ -54,7 +54,7 @@
   }
   main {
     padding: 20px 1rem 40px;
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
     background: white;
     border-radius: 12px;
@@ -63,25 +63,41 @@
   h2 {
     color: #d63384;
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border-bottom: 3px dashed #ffc0cb;
     padding-bottom: 0.5rem;
     text-align: center;
+  }
+  section {
+    margin-bottom: 2.5rem;
+  }
+  section h3 {
+    color: #d63384;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
   .product-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .product-card {
     background-color: #ffffff;
     border: 1px solid #ffc0cb;
     border-radius: 12px;
     padding: 1rem;
-    width: calc(50% - 1.5rem);
+    width: calc(33% - 1.5rem);
+    min-width: 270px;
+    box-sizing: border-box;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .product-card:hover {
     transform: translateY(-5px);
@@ -89,53 +105,59 @@
   }
   .product-card img {
     width: 100%;
-    max-height: 200px;
+    max-width: 200px;
+    max-height: 160px;
     object-fit: contain;
     border-radius: 8px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.7rem;
+    background: #f6f6f6;
   }
-  .product-card h3 {
+  .product-card h4 {
     font-size: 1.1rem;
-    margin: 0.3rem 0;
+    margin: 0.3rem 0 0.2rem 0;
     color: #cc3366;
     font-weight: 700;
+    text-align: center;
   }
   .product-card p {
     margin: 0.2rem 0;
     font-size: 0.95rem;
     color: #555;
+    text-align: center;
+  }
+  /* 多圖輪播簡易樣式（僅顯示第一張） */
+  .multi-img {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .multi-img img {
+    width: 85px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    background: #f6f6f6;
   }
   /* 響應式調整 */
+  @media (max-width: 1000px) {
+    .product-card { width: calc(50% - 1.5rem); }
+  }
   @media (max-width: 768px) {
-    body {
-      font-size: 14px;
-    }
+    body { font-size: 14px; }
     nav a {
       margin: 0 0.5rem;
       font-size: 0.9rem;
       padding: 6px 8px;
     }
-    header h1 {
-      font-size: 1.6rem;
-    }
-    h2 {
-      font-size: 1.4rem;
-    }
-    main {
-      padding: 15px 1rem 30px;
-    }
-    .product-grid {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .product-card {
-      width: 100% !important;
-      box-sizing: border-box;
-    }
-    .product-card img {
-      width: 100%;
-      height: auto;
-    }
+    header h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    main { padding: 15px 1rem 30px; }
+    .product-grid { flex-direction: column; gap: 1rem; }
+    .product-card { width: 100% !important; min-width: 0; }
+    .product-card img { max-width: 100%; }
+    section h3 { font-size: 1.1rem; }
   }
 </style>
 </head>
@@ -154,26 +176,112 @@
 
 <main>
   <h2>📦 商品區 Products</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="images/328laksa袋裝圖.jpg" alt="328 Laksa" />
-      <h3>☆328加東叻沙 x Nissin日清泡麵組☆</h3>
-      <p>分類：泡麵 🇸🇬 新加坡</p>
-      <p>價格：NT$ 380</p>
+
+  <!-- 🌸 限量精選・角色主題專區 -->
+  <section>
+    <h3>🌸 限量精選・角色主題專區</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/LFC Hello Kitty.jpg" alt="LFC Hello Kitty 10' Plush" />
+        <h4>☆利物浦~LFC Hello Kitty 10' Plush☆</h4>
+        <p>分類：角色主題 🇸🇬 新加坡</p>
+        <p>價格：NT$ 290</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
     </div>
-    <div class="product-card">
-      <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="beryl's 黑棕蓋" />
-      <h3>☆beryl's 杏仁苦甜巧克力（黑棕蓋）☆</h3>
-      <p>分類：零食 🇲🇾 馬來西亞</p>
-      <p>價格：NT$ 390</p>
+  </section>
+
+  <!-- 🌸 人氣抹醬 / 咖椰 -->
+  <section>
+    <h3>🌸 人氣抹醬 / 咖椰</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="multi-img">
+          <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee 傳統海南咖椰醬" />
+          <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g2.jpg" alt="Hock Kee 傳統海南咖椰醬2" />
+        </div>
+        <h4>☆Hock Kee (福氣安康) 傳統海南咖椰醬 220g☆</h4>
+        <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 290</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
+      <div class="product-card">
+        <div class="multi-img">
+          <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg" alt="Hock Kee 香蘭咖椰醬" />
+          <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g2.jpg" alt="Hock Kee 香蘭咖椰醬2" />
+        </div>
+        <h4>☆Hock Kee (福氣安康) 香蘭咖椰醬 220g☆</h4>
+        <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 290</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
+      <div class="product-card">
+        <img src="images/華陽香椰咖椰醬 270g.jpg" alt="華陽香椰咖椰醬" />
+        <h4>☆華陽 Oriental Kopi Kaya 香椰咖椰醬 270g☆</h4>
+        <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 300</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
+      <div class="product-card">
+        <img src="images/華陽斑蘭咖椰醬 270g.jpg" alt="華陽斑蘭咖椰醬" />
+        <h4>☆華陽 Oriental Kopi Kaya 斑蘭咖椰醬 270g☆</h4>
+        <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 300</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
     </div>
-    <div class="product-card">
-      <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee 傳統咖椰" />
-      <h3>☆Hock Kee 傳統海南咖椰醬☆</h3>
-      <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
-      <p>價格：NT$ 290</p>
+  </section>
+
+  <!-- 🌸 泡麵 / 調味包 -->
+  <section>
+    <h3>🌸 泡麵 / 調味包</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="multi-img">
+          <img src="images/328laksa袋裝圖.jpg" alt="328加東叻沙 x Nissin日清泡麵組" />
+          <img src="images/328laksa袋裝圖2.jpg" alt="328加東叻沙 x Nissin日清泡麵組2" />
+          <img src="images/328laksa袋裝圖3.jpg" alt="328加東叻沙 x Nissin日清泡麵組3" />
+        </div>
+        <h4>☆328加東叻沙 x Nissin日清泡麵組 - 5包*113g /袋☆</h4>
+        <p>分類：泡麵 🇸🇬 新加坡</p>
+        <p>價格：NT$ 380</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
+      <div class="product-card">
+        <div class="multi-img">
+          <img src="images/Houten Chilli Tapioca Chips袋8包35g.jpg" alt="豪登叁巴木薯片" />
+          <img src="images/Houten Chilli Tapioca Chips袋8包35g2.jpg" alt="豪登叁巴木薯片2" />
+        </div>
+        <h4>☆豪登叁巴木薯片 / Houten Chilli Tapioca Chips袋裝 - 8包*35g /袋☆</h4>
+        <p>分類：泡麵 🇸🇬 新加坡</p>
+        <p>價格：NT$ 260</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- 🌸 零食 / 伴手禮 / 餅乾糖果 -->
+  <section>
+    <h3>🌸 零食 / 伴手禮 / 餅乾糖果</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="beryl's 杏仁苦甜巧克力" />
+        <h4>☆beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g☆</h4>
+        <p>分類：零食 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 390</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
+      <div class="product-card">
+        <img src="images/beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg" alt="beryl's 杏仁綜合口味巧克力" />
+        <h4>☆beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g☆</h4>
+        <p>分類：零食 🇲🇾 馬來西亞</p>
+        <p>價格：NT$ 390</p>
+        <p style="color:#d63384;">【預購商品･請先詢問】</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 其他分類可日後補充 -->
 </main>
 </body>
 </html>
