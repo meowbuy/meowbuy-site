@@ -1,276 +1,247 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>meowbuy 萌客回饋 Customer Love 💖</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
-  body {
-    font-family: 'Noto Sans TC', Arial, sans-serif;
-    margin: 0; padding: 0;
-    background-color: #fff0f5;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 60px;
-    background-color: #f8f9fa;
-    padding: 1rem 0;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(214,51,132,0.15);
-    z-index: 1000;
-  }
-  nav a {
-    margin: 0 1rem;
-    color: #d63384;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 6px 12px;
-    border-radius: 20px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  nav a:hover, nav a:focus {
-    background-color: #d63384;
-    color: #fff;
-    outline: none;
-  }
-  header {
-    background-color: #ffe4ec;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-top: 60px;
-  }
-  header h1 {
-    font-size: 2.2rem;
-    color: #d63384;
-    margin: 0;
-    line-height: 1.3;
-  }
-  main {
-    padding: 20px 1rem 40px;
-    max-width: 960px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(255,77,109,0.15);
-  }
-  /* 品牌故事區塊 */
-  .brand-story {
-    background: #fff0f6;
-    border-radius: 15px;
-    box-shadow: 0 4px 16px rgba(255, 182, 193, 0.12);
-    padding: 32px 24px 28px 24px;
-    margin-bottom: 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .brand-story h2 {
-    color: #d63384;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: left;
-    border: none;
-    padding: 0;
-  }
-  .brand-story p {
-    color: #6f2b4f;
-    font-size: 1.06rem;
-    margin-bottom: 0.8rem;
-    padding: 0;
-  }
-  .brand-story .story-highlight {
-    font-weight: bold;
-    color: #d63384;
-    background: #ffe4ec;
-    border-radius: 6px;
-    padding: 0 6px;
-    margin: 0 2px;
-  }
-  .brand-story .story-quote {
-    color: #ff4d6d;
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-top: 1.2rem;
-    display: block;
-    text-align: right;
-  }
-  /* 萌客回饋區塊 */
-  .customer-love-section {
-    margin-bottom: 2.5rem;
-  }
-  .customer-love-section h2 {
-    color: #d63384;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 3px dashed #ffc0cb;
-    padding-bottom: 0.5rem;
-    text-align: center;
-  }
-  .customer-love-section .intro {
-    text-align: center;
-    color: #8d295a;
-    margin-bottom: 1.5rem;
-    font-size: 1.06rem;
-  }
-  .reviews-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  .review-card {
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 10px rgba(214,51,132,0.10);
-    padding: 1.2rem 1.4rem 1rem 1.4rem;
-    max-width: 320px;
-    min-width: 220px;
-    flex: 1 1 220px;
-    position: relative;
-    transition: box-shadow 0.3s, transform 0.3s;
-  }
-  .review-card:hover {
-    box-shadow: 0 6px 20px rgba(214,51,132,0.18);
-    transform: translateY(-4px) scale(1.03);
-  }
-  .review-card .heart {
-    position: absolute;
-    top: 14px; right: 18px;
-    font-size: 1.3rem;
-    color: #ff4d6d;
-    user-select: none;
-  }
-  .review-text {
-    font-size: 1rem;
-    color: #5a2b4c;
-    margin-bottom: 0.7rem;
-    font-style: italic;
-    padding-right: 1.5em;
-  }
-  .review-author {
-    color: #d63384;
-    font-weight: 700;
-    font-size: 1.06rem;
-    text-align: right;
-    display: block;
-  }
-  /* 回饋相片牆 */
-  .feedback-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-  .feedback-gallery img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(214,51,132,0.18);
-    transition: transform 0.3s;
-    cursor: pointer;
-    background: #fff0f6;
-  }
-  .feedback-gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(214,51,132,0.25);
-  }
-  @media (max-width: 768px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>meowbuy 萌客回饋 Customer Love 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Zhi+Mang+Xing&display=swap');
     body {
-      font-size: 14px;
+      font-family: 'Noto Sans TC', Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background-color: #f8f9fa;
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.15);
+      z-index: 1000;
     }
     nav a {
-      margin: 0 0.5rem;
-      font-size: 0.9rem;
-      padding: 6px 8px;
+      margin: 0 1rem;
+      color: #d63384;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a:hover, nav a:focus {
+      background-color: #d63384;
+      color: #fff;
+    }
+    header {
+      background-color: #ffe4ec;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 60px;
     }
     header h1 {
-      font-size: 1.6rem;
+      font-size: 2.2rem;
+      color: #d63384;
+      margin: 0;
+      line-height: 1.3;
     }
     main {
-      padding: 15px 1rem 30px;
+      padding: 20px 1rem 40px;
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255,77,109,0.15);
     }
+
     .brand-story {
-      padding: 18px 10px 16px 10px;
+      background: #fff0f6;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(255, 182, 193, 0.12);
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-family: 'Zhi Mang Xing', 'Noto Sans TC', cursive;
+      text-align: center;
+    }
+    .brand-story h2 {
+      color: #d63384;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .brand-story p {
+      color: #6f2b4f;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .story-quote {
+      display: inline-block;
+      font-style: italic;
+      color: #ff4d6d;
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      background: #fff0f5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.1);
+      margin-top: 2rem;
+    }
+
+    .customer-love-section {
+      margin-bottom: 2.5rem;
     }
     .customer-love-section h2 {
-      font-size: 1.3rem;
+      color: #d63384;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 3px dashed #ffc0cb;
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+    .customer-love-section .intro {
+      text-align: center;
+      color: #8d295a;
+      margin-bottom: 1.5rem;
+      font-size: 1.06rem;
+    }
+    .reviews-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
     .review-card {
-      font-size: 0.96rem;
-      padding: 1rem 0.7rem 0.7rem 0.7rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(214,51,132,0.10);
+      padding: 1.2rem 1.4rem 1rem 1.4rem;
+      max-width: 320px;
+      min-width: 220px;
+      flex: 1 1 220px;
+      position: relative;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .review-card:hover {
+      box-shadow: 0 6px 20px rgba(214,51,132,0.18);
+      transform: translateY(-4px) scale(1.03);
+    }
+    .review-card .heart {
+      position: absolute;
+      top: 14px; right: 18px;
+      font-size: 1.3rem;
+      color: #ff4d6d;
+    }
+    .review-text {
+      font-size: 1rem;
+      color: #5a2b4c;
+      margin-bottom: 0.7rem;
+      font-style: italic;
+    }
+    .review-author {
+      color: #d63384;
+      font-weight: 700;
+      font-size: 1.06rem;
+      text-align: right;
+      display: block;
+    }
+
+    .feedback-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
     }
     .feedback-gallery img {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.18);
+      transition: transform 0.3s;
+      background: #fff0f6;
     }
-  }
-</style>
+    .feedback-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(214,51,132,0.25);
+    }
+
+    @media (max-width: 768px) {
+      body { font-size: 14px; }
+      nav a { font-size: 0.9rem; padding: 6px 8px; }
+      header h1 { font-size: 1.6rem; }
+      main { padding: 15px 1rem 30px; }
+      .feedback-gallery img {
+        width: 100px;
+        height: 100px;
+      }
+      .brand-story p {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a href="index.html">首頁 Home</a>
-  <a href="products.html">商品區 Products</a>
-  <a href="custom.html">客製代購 Personalized Shopping</a>
-  <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
-  <a href="contact.html">聯絡我們 Contact</a>
-</nav>
+  <nav>
+    <a href="index.html">首頁 Home</a>
+    <a href="products.html">商品區 Products</a>
+    <a href="custom.html">客製代購 Personalized Shopping</a>
+    <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
+    <a href="contact.html">聯絡我們 Contact</a>
+  </nav>
 
-<header>
-  <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
-</header>
+  <header>
+    <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
+  </header>
 
-<main>
-  <!-- 品牌故事區塊 -->
-  <section class="brand-story" aria-label="品牌故事">
-    <h2>🎀密探ㄚ頭代GO🎀 の故事</h2>
-    <p>最初，只是一場旅行。旅途中愛上了新加坡的獨特文化與新馬地區的美味好物，每次回台，總會精挑細選幾樣好物，分享給親朋好友。</p>
-    <p>契機起予相識的新加坡朋友，萌生了打造雙向代購的想法--既能將新馬好物帶給台灣顧客，也讓我們在熱愛中累積成就感。於是，「<span class="story-highlight">密探ㄚ頭代GO</span>」誕生了。</p>
-    <p>「密探ㄚ頭」是一位呆萌卻認真的小密探，為您尋找心儀好物、跨越距離將美好送達。她不只是賣家，更像一位理解及陪伴您的朋友。</p>
-    <p>代購不只是買賣，更是種值得長久的信賴陪伴。讓每次購物都像是被用心照顧的過程。</p>
-    <span class="story-quote">🌸 療癒其實很簡單，一買一拆剛剛好 🌸</span>
-  </section>
+  <main>
+    <!-- 品牌故事區塊 -->
+    <section class="brand-story" aria-label="品牌故事">
+      <h2>🎀密探ㄚ頭代GO🎀 の故事</h2>
+      <p>最初，只是一場旅行。旅途中愛上了新加坡的獨特文化與新馬地區的美味好物，每次回台，總會精挑細選幾樣好物，分享給親朋好友。</p>
+      <p>契機起予相識的新加坡朋友，萌生了打造雙向代購的想法——既能將新馬好物帶給台灣顧客，也讓我們在熱愛中累積成就感。於是，「密探ㄚ頭代GO」誕生了。</p>
+      <p>「密探ㄚ頭」是一位呆萌卻認真的小密探，為您尋找心儀好物、跨越距離將美好送達。她不只是賣家，更像一位理解及陪伴您的朋友。</p>
+      <p>代購不只是買賣，更是種值得長久的信賴陪伴。讓每次購物都像是被用心照顧的過程。</p>
+      <span class="story-quote">🌸 療癒其實很簡單，一買一拆剛剛好 🌸</span>
+    </section>
 
-  <!-- 萌客回饋區塊 -->
-  <section class="customer-love-section" aria-label="萌客回饋 Customer Love">
-    <h2>💬 萌客回饋 Customer Love 💖</h2>
-    <div class="intro">
-      感謝每一位萌客的支持與愛護，您的回饋是我們持續前進的動力！<br>
-      一起來看看大家的甜甜心得與互動吧～
-    </div>
-    <div class="reviews-list">
-      <div class="review-card">
-        <span class="heart" aria-hidden="true">💖</span>
-        <div class="review-text">「收到密探ㄚ頭代GO推薦的零食，真的超療癒，每次拆開都像拆禮物！」</div>
-        <div class="review-author">- 小美</div>
+    <!-- 萌客回饋區塊 -->
+    <section class="customer-love-section" aria-label="萌客回饋 Customer Love">
+      <h2>💬 萌客回饋 Customer Love 💖</h2>
+      <div class="intro">
+        感謝每一位萌客的支持與愛護，您的回饋是我們持續前進的動力！<br>
+        一起來看看大家的甜甜心得與互動吧～
       </div>
-      <div class="review-card">
-        <span class="heart" aria-hidden="true">💖</span>
-        <div class="review-text">「感謝密探ㄚ頭的用心，讓我感受到遠方朋友的溫暖。」</div>
-        <div class="review-author">- 阿強</div>
+      <div class="reviews-list">
+        <div class="review-card">
+          <span class="heart">💖</span>
+          <div class="review-text">「收到密探ㄚ頭代GO推薦的零食，真的超療癒，每次拆開都像拆禮物！」</div>
+          <div class="review-author">- 小美 💕</div>
+        </div>
+        <div class="review-card">
+          <span class="heart">💖</span>
+          <div class="review-text">「感謝密探ㄚ頭的用心，讓我感受到遠方朋友的溫暖。」</div>
+          <div class="review-author">- 阿強 ☁️</div>
+        </div>
+        <div class="review-card">
+          <span class="heart">💖</span>
+          <div class="review-text">「每次開箱都能感受到滿滿的儀式感，推薦給身邊的朋友們！」</div>
+          <div class="review-author">- Yuki 🌸</div>
+        </div>
       </div>
-      <div class="review-card">
-        <span class="heart" aria-hidden="true">💖</span>
-        <div class="review-text">「每次開箱都能感受到滿滿的儀式感，推薦給身邊的朋友們！」</div>
-        <div class="review-author">- Yuki</div>
+      <div class="feedback-gallery">
+        <img src="images/feedback1.jpg" alt="客戶回饋1" />
+        <img src="images/feedback2.jpg" alt="客戶回饋2" />
+        <img src="images/feedback3.jpg" alt="客戶回饋3" />
+        <img src="images/feedback4.jpg" alt="客戶回饋4" />
       </div>
-    </div>
-    <div class="feedback-gallery">
-      <img src="images/feedback1.jpg" alt="客戶回饋1" />
-      <img src="images/feedback2.jpg" alt="客戶回饋2" />
-      <img src="images/feedback3.jpg" alt="客戶回饋3" />
-      <img src="images/feedback4.jpg" alt="客戶回饋4" />
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 </body>
 </html>
