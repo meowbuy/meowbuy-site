@@ -19,7 +19,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet" />
 
 <style>
-  /* 全站字體設定 */
   body {
     font-family: 'PopGothicTC', 'Shadows Into Light', 'Amatic SC', 'Noto Sans TC', sans-serif;
     margin: 0; padding: 2rem 1.5rem;
@@ -82,6 +81,19 @@
     text-indent: 2em;
     letter-spacing: 1.2px;
   }
+  /* 新增醒目文字樣式 */
+  .highlight-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d63384;
+    text-align: center;
+    margin: 2.5rem 0 2rem 0;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    text-shadow:
+      1px 1px 2px rgba(214,51,132,0.4),
+      0 0 8px rgba(255,192,203,0.6);
+  }
   .btn-group {
     text-align: center;
     margin-top: 3rem;
@@ -133,6 +145,10 @@
     header h1 {
       font-size: 2.2rem;
     }
+    .highlight-text {
+      font-size: 1.4rem;
+      margin: 2rem 0 1.5rem 0;
+    }
     .btn {
       font-size: 1.2rem;
       padding: 12px 28px;
@@ -173,9 +189,11 @@
 
 代購不只是買賣，更是種值得長久的信賴陪伴。
 讓每次購物都像是被用心照顧的過程。
+  </p>
 
-🌸 療癒其實很簡單，一買一拆剛剛好 🌸
+  <p class="highlight-text">🌸 療癒其實很簡單，一買一拆剛剛好 🌸</p>
 
+  <p class="story-text">
 用心の經營，期待在這個互動及有溫度的小天地裡，
 與您一起分享、成長。
   </p>
@@ -188,3 +206,7 @@
   <div class="social-links" aria-label="社群連結">
     <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
     <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+  </div>
+</main>
+</body>
+</html>
