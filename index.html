@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>meowbuy 首頁 Home</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
   /* Reset & Base */
   * {
     box-sizing: border-box;
   }
   body {
-    font-family: 'ZCOOL KuaiLe', 'Noto Sans TC', Arial, sans-serif;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
     margin: 0; padding: 0;
     background-color: #fff0f5;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
-    scroll-behavior: smooth;
   }
   a {
     color: #d63384;
@@ -119,37 +118,32 @@
     line-height: 1.2;
   }
 
-  /* Hero Banner */
-  .hero-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  /* Banner Section */
+  .banner {
+    position: relative;
+    margin: 1.5rem auto;
     max-width: 960px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, #ffe4ec 0%, #fff0f5 100%);
-    border-radius: 16px;
+    border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 6px 18px rgba(255,77,109,0.3);
   }
-  .hero-text {
-    flex: 1 1 60%;
-    color: #d63384;
+  .banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
   }
-  .hero-text h1 {
-    font-size: 2.8rem;
-    margin: 0 0 0.5rem;
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
     font-weight: 700;
-  }
-  .hero-text p {
-    font-size: 1.4rem;
-    margin: 0;
-    font-weight: 500;
-  }
-  .hero-banner img {
-    flex: 1 1 35%;
-    max-width: 200px;
-    height: auto;
-    user-select: none;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    text-align: center;
+    padding: 0 1rem;
   }
 
   /* Main Content */
@@ -264,16 +258,12 @@
       font-size: 1.8rem;
       padding: 0 1rem;
     }
-    .hero-banner {
-      flex-direction: column;
-      text-align: center;
+    .banner img {
+      height: 200px;
     }
-    .hero-text {
-      flex: none;
-    }
-    .hero-banner img {
-      margin-top: 1rem;
-      max-width: 150px;
+    .banner-text {
+      font-size: 1.4rem;
+      padding: 0 0.5rem;
     }
     .product-list {
       flex-direction: column;
@@ -286,28 +276,6 @@
     section {
       padding: 1.5rem 1rem 2rem;
     }
-    nav ul {
-      display: none;
-      flex-direction: column;
-      background-color: #f8f9fa;
-      position: fixed;
-      top: 60px;
-      right: 0;
-      width: 200px;
-      box-shadow: 0 2px 8px rgba(214,51,132,0.2);
-      border-radius: 0 0 0 12px;
-      padding: 1rem 0;
-    }
-    nav ul.show {
-      display: flex;
-    }
-    nav li {
-      margin: 0.5rem 0;
-      text-align: center;
-    }
-    .hamburger {
-      display: flex;
-    }
   }
 </style>
 </head>
@@ -315,11 +283,11 @@
 
 <nav>
   <ul id="nav-links">
-    <li><a href="#home">首頁 Home</a></li>
-    <li><a href="#products">商品區 Products</a></li>
-    <li><a href="#custom">客製代購 Personalized Shopping</a></li>
-    <li><a href="#customer-love">萌客回饋 Customer Love 💖</a></li>
-    <li><a href="#contact">聯絡我們 Contact</a></li>
+    <li><a href="index.html">首頁 Home</a></li>
+    <li><a href="products.html">商品區 Products</a></li>
+    <li><a href="custom.html">客製代購 Personalized Shopping</a></li>
+    <li><a href="customer-love.html">萌客回饋 Customer Love 💖</a></li>
+    <li><a href="contact.html">聯絡我們 Contact</a></li>
   </ul>
   <div class="hamburger" id="hamburger" aria-label="切換選單" tabindex="0" role="button">
     <div></div>
@@ -328,20 +296,17 @@
   </div>
 </nav>
 
-<header id="home">
+<header>
   <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
 </header>
 
-<section class="hero-banner" aria-label="主視覺">
-  <div class="hero-text">
-    <h1>🎀密探ㄚ頭代GO🎀</h1>
-    <p>療癒其實很簡單，一買一拆剛剛好</p>
-  </div>
-  <img src="https://i.imgur.com/5pX2L2c.png" alt="萌萌喵角色插畫" />
+<section class="banner" aria-label="主視覺">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=960&q=80" alt="新加坡與馬來西亞美食" />
+  <div class="banner-text">療癒其實很簡單，一買一拆剛剛好</div>
 </section>
 
 <main>
-  <section id="about" aria-label="品牌故事">
+  <section aria-label="品牌故事">
     <h2>關於我們</h2>
     <p>一場旅程，讓我們愛上新加坡與馬來西亞的美味與文化。  
     我們用心尋找正宗好物，跨越距離，將溫暖與信賴帶給每一位顧客。  
@@ -350,7 +315,7 @@
     <a href="about.html" class="btn" aria-label="了解更多品牌故事">了解更多</a>
   </section>
 
-  <section id="products" aria-label="熱銷商品推薦">
+  <section aria-label="熱銷商品推薦">
     <h2>熱銷商品推薦</h2>
     <div class="product-list">
       <div class="product-card" tabindex="0">
@@ -371,7 +336,7 @@
     </div>
   </section>
 
-  <section id="customer-love" aria-label="萌客回饋">
+  <section aria-label="萌客回饋">
     <h2>萌客回饋</h2>
     <blockquote>
       「超喜歡這家的咖椰醬，味道正宗，服務又親切！」  
@@ -383,8 +348,6 @@
     </blockquote>
   </section>
 </main>
-
-<!-- 這裡可新增其他區塊，如客製代購、聯絡我們等 -->
 
 <script>
   // 漢堡選單切換
