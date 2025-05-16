@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>密探ㄚ頭代GO Banner</title>
+<title>密探ㄚ頭代GO 首頁</title>
 <style>
   body {
     font-family: 'Noto Sans TC', sans-serif;
@@ -16,7 +16,7 @@
   header.banner {
     position: relative;
     text-align: center;
-    margin-top: 1rem;
+    margin-bottom: 3rem;
   }
   .header-illustration {
     max-width: 360px;
@@ -27,7 +27,6 @@
     display: block;
     margin: 0 auto;
   }
-  /* 文字標題 */
   .banner-title {
     position: absolute;
     top: 20px;
@@ -41,7 +40,6 @@
     margin: 0;
     user-select: none;
   }
-  /* 標語 */
   .banner-subtitle {
     position: absolute;
     bottom: 20px;
@@ -55,7 +53,6 @@
     margin: 0;
     user-select: none;
   }
-  /* 響應式調整 */
   @media (max-width: 400px) {
     .banner-title {
       font-size: 2rem;
@@ -63,6 +60,25 @@
     .banner-subtitle {
       font-size: 1rem;
     }
+  }
+  /* 品牌故事區塊 */
+  section.brand-story {
+    background: #fff7fa;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(180, 127, 155, 0.15);
+    color: #6b3a5b;
+    margin-bottom: 3rem;
+  }
+  section.brand-story h2 {
+    font-family: 'Amatic SC', cursive, 'Noto Sans TC', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #d47fa8;
+  }
+  section.brand-story p {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 </style>
 </head>
@@ -72,5 +88,19 @@
     <h1 class="banner-title">密探ㄚ頭代GO</h1>
     <p class="banner-subtitle">陪你一起尋寶的溫柔密探</p>
   </header>
+
+  <section class="brand-story">
+    <h2>品牌故事</h2>
+    <p>
+      密探ㄚ頭代GO誕生於對生活中小確幸的熱愛，  
+      我們希望透過溫暖且可愛的插畫，陪伴每一位尋寶者，  
+      在日常中發現美好，感受溫柔與親切。  
+      這個品牌不只是商品，更是一種生活態度，  
+      讓每個人都能找到屬於自己的小秘密與幸福。
+    </p>
+  </section>
+
+  <!-- 其他內容區塊 -->
+
 </body>
 </html>
