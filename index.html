@@ -3,104 +3,170 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>密探ㄚ頭代GO 首頁</title>
+<title>meowbuy 首頁 Home</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
   body {
-    font-family: 'Noto Sans TC', sans-serif;
-    background-color: #f7f0f5;
-    color: #6b3a5b;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    margin: 0; padding: 0;
+    background-color: #fff0f5;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
   }
-  header.banner {
-    position: relative;
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
     text-align: center;
-    margin-bottom: 3rem;
+    box-shadow: 0 2px 8px rgba(214,51,132,0.15);
+    z-index: 1000;
+  }
+  nav a {
+    margin: 0 1rem;
+    color: #d63384;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #d63384;
+    color: #fff;
+    outline: none;
+  }
+  header {
+    background-color: #ffe4ec;
+    padding: 2rem 1rem 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 60px;
+    position: relative;
   }
   .header-illustration {
-    max-width: 360px;
+    max-width: 320px;
     width: 90%;
     border-radius: 24px;
     box-shadow: 0 6px 16px rgba(180, 127, 155, 0.25);
     background: #fff7fa;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1.2rem auto;
   }
   .banner-title {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #d47fa8;
-    font-family: 'Amatic SC', cursive, 'Noto Sans TC', sans-serif;
-    font-size: 2.8rem;
+    font-size: 2.1rem;
+    color: #d63384;
+    margin: 0.5rem 0 0.2rem 0;
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    margin: 0;
-    user-select: none;
+    letter-spacing: 2px;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
   }
   .banner-subtitle {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    font-size: 1.1rem;
     color: #bfa3b8;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    margin: 0;
-    user-select: none;
+    margin: 0 0 1.2rem 0;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    letter-spacing: 1px;
   }
-  @media (max-width: 400px) {
-    .banner-title {
-      font-size: 2rem;
-    }
-    .banner-subtitle {
-      font-size: 1rem;
-    }
+  main {
+    padding: 20px 1rem 40px;
+    max-width: 960px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255,77,109,0.15);
+    text-align: center;
+  }
+  h2 {
+    color: #d63384;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px dashed #ffc0cb;
+    padding-bottom: 0.5rem;
   }
   /* 品牌故事區塊 */
-  section.brand-story {
+  .brand-story {
     background: #fff7fa;
-    border-radius: 20px;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 4px 12px rgba(180, 127, 155, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(180, 127, 155, 0.10);
     color: #6b3a5b;
-    margin-bottom: 3rem;
+    margin: 2.5rem auto 2rem auto;
+    max-width: 600px;
+    text-align: left;
   }
-  section.brand-story h2 {
-    font-family: 'Amatic SC', cursive, 'Noto Sans TC', sans-serif;
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    color: #d47fa8;
+  .brand-story h3 {
+    color: #d63384;
+    font-size: 1.35rem;
+    margin-bottom: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
-  section.brand-story p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+  .brand-story p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  /* 響應式調整 */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+      padding: 6px 8px;
+    }
+    header h1, .banner-title {
+      font-size: 1.4rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+    main {
+      padding: 15px 1rem 30px;
+    }
+    .header-illustration {
+      max-width: 98vw;
+    }
+    .brand-story {
+      padding: 1rem 0.5rem;
+    }
   }
 </style>
 </head>
 <body>
-  <header class="banner">
-    <img src="images/Xun-Bao-Nu-Hai.jpg" alt="密探小女孩覓寶手繪插畫" class="header-illustration" />
-    <h1 class="banner-title">密探ㄚ頭代GO</h1>
-    <p class="banner-subtitle">陪你一起尋寶的溫柔密探</p>
-  </header>
+<nav>
+  <a href="index.html">首頁 Home</a>
+  <a href="products.html">商品區 Products</a>
+  <a href="custom.html">客製代購 Personalized Shopping</a>
+  <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
+  <a href="contact.html">聯絡我們 Contact</a>
+</nav>
 
+<header>
+  <img src="images/Xun-Bao-Nu-Hai.jpg" alt="密探小女孩覓寶手繪插畫" class="header-illustration" />
+  <div class="banner-title">密探ㄚ頭代GO</div>
+  <div class="banner-subtitle">陪你一起尋寶的溫柔密探</div>
+  <h1 style="display:none;">🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
+</header>
+
+<main>
   <section class="brand-story">
-    <h2>品牌故事</h2>
+    <h3>品牌故事</h3>
     <p>
-      密探ㄚ頭代GO誕生於對生活中小確幸的熱愛，  
-      我們希望透過溫暖且可愛的插畫，陪伴每一位尋寶者，  
-      在日常中發現美好，感受溫柔與親切。  
-      這個品牌不只是商品，更是一種生活態度，  
+      密探ㄚ頭代GO誕生於對生活中小確幸的熱愛，<br>
+      我們希望透過溫暖且可愛的插畫，陪伴每一位尋寶者，<br>
+      在日常中發現美好，感受溫柔與親切。<br>
+      這個品牌不只是商品，更是一種生活態度，<br>
       讓每個人都能找到屬於自己的小秘密與幸福。
     </p>
   </section>
-
-  <!-- 其他內容區塊 -->
-
+  <h2>🎀 歡迎來到 meowbuy！</h2>
+  <p>我們專門代購新加坡、馬來西亞超人氣美食與角色商品，萌萌喵陪你一起輕鬆選購💖</p>
+</main>
 </body>
 </html>
