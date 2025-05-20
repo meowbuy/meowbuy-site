@@ -7,28 +7,24 @@
   <meta name="description" content="感謝每一位萌客的支持與愛護，您的回饋是我們持續前進的動力！一起來看看大家的甜甜心得與互動吧～" />
   <link rel="canonical" href="https://yourdomain.com/customer-love.html" />
   <style>
+    :root {
+      --color-primary: #b47f9b;
+      --color-highlight: #d63384;
+      --color-secondary: #7a4a6d;
+      --color-bg: #f7f0f5;
+      --color-border: #ffc0cb;
+    }
     @font-face {
       font-family: 'POP Gothic';
       src: url('fonts/PopGothicCjkTc-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    :root {
-      --color-primary: #b47f9b;
-      --color-secondary: #7a4a6d;
-      --color-bg: #f7f0f5;
-      --color-text: #6b3a5b;
-      --color-accent: #d9c7d9;
-      --color-border: #ffc0cb;
-      --color-highlight: #ff4d6d;
     }
     body {
       font-family: 'Noto Sans TC', 'POP Gothic', sans-serif;
       margin: 0; padding: 2rem 1.5rem;
       background-color: var(--color-bg);
-      color: var(--color-text);
-      font-size: 1.3rem;
-      line-height: 2.2;
+      color: var(--color-secondary);
+      font-size: 1.15rem;
+      line-height: 2.1;
       max-width: 720px;
       margin-left: auto;
       margin-right: auto;
@@ -38,36 +34,31 @@
       top: 0; left: 0; right: 0;
       background-color: var(--color-bg);
       box-shadow: 0 2px 8px rgba(183, 126, 154, 0.15);
+      display: flex;
+      align-items: center;
       z-index: 1000;
       height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 0 0.5rem;
     }
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
     nav a {
       color: var(--color-primary);
       text-decoration: none;
       font-weight: 700;
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 1.1rem;
+      margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
       transition: background-color 0.3s, color 0.3s;
-      margin: 0 0.5rem;
-      display: inline-block;
+      background: none;
     }
     nav a[aria-current="page"], nav a.active {
       background-color: var(--color-highlight);
       color: #fff;
     }
     nav a:hover, nav a:focus {
-      background-color: var(--color-secondary);
+      background-color: var(--color-highlight);
       color: #fff;
       outline: none;
     }
@@ -93,46 +84,23 @@
       transition: 0.3s;
     }
     @media (max-width: 650px) {
-      nav {
-        justify-content: flex-end;
-        height: 54px;
-      }
+      nav { justify-content: flex-end; height: 54px; }
       .nav-links {
-        position: absolute;
-        top: 54px; right: 0; left: 0;
+        position: absolute; top: 54px; right: 0; left: 0;
         background: var(--color-bg);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
         box-shadow: 0 4px 16px rgba(180, 127, 155, 0.08);
         display: none;
       }
-      .nav-links.open {
-        display: flex;
-        animation: fadeIn 0.2s;
-      }
+      .nav-links.open { display: flex; animation: fadeIn 0.2s; }
       nav a {
-        font-size: 1.08rem;
-        padding: 14px 0;
-        margin: 0;
-        border-radius: 0;
-        border-bottom: 1px solid #f0e3f0;
-        text-align: center;
-        width: 100%;
+        font-size: 1.08rem; padding: 14px 0; margin: 0; border-radius: 0;
+        border-bottom: 1px solid var(--color-border); text-align: center; width: 100%;
       }
-      .hamburger {
-        display: flex;
-      }
+      .hamburger { display: flex; }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    header {
-      margin-top: 60px;
-      text-align: center;
-      padding-bottom: 1rem;
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
+    header { margin-top: 60px; text-align: center; padding-bottom: 1rem; }
     header h1 {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 2.2rem;
@@ -161,11 +129,13 @@
       font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 1.2rem;
+      font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
     }
     .brand-story p {
       font-size: 1.2rem;
       margin-bottom: 1rem;
-      color: var(--color-text);
+      color: var(--color-secondary);
+      font-family: 'Noto Sans TC', 'POP Gothic', sans-serif;
     }
     .story-quote {
       display: inline-block;
@@ -258,29 +228,30 @@
       box-shadow: 0 4px 16px rgba(180, 127, 155, 0.25);
     }
     @media (max-width: 600px) {
-      body {
-        font-size: 1.1rem;
-        padding: 1.5rem 1rem;
-      }
-      nav a {
-        margin: 0 0.5rem;
-        font-size: 0.9rem;
-        padding: 6px 8px;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      main {
-        padding: 1rem 1rem 2rem;
-      }
-      .brand-story p {
-        font-size: 1.05rem;
-      }
-      .feedback-gallery img {
-        width: 100px;
-        height: 100px;
-      }
+      body { font-size: 1.1rem; padding: 1.5rem 1rem; }
+      nav a { margin: 0 0.5rem; font-size: 0.9rem; padding: 6px 8px; }
+      header h1 { font-size: 2.2rem; }
+      main { padding: 1rem 1rem 2rem; }
+      .brand-story p { font-size: 1.05rem; }
+      .feedback-gallery img { width: 100px; height: 100px; }
     }
+    @media (max-width: 650px) {
+      nav { justify-content: flex-end; height: 54px; }
+      .nav-links {
+        position: absolute; top: 54px; right: 0; left: 0;
+        background: var(--color-bg);
+        flex-direction: column; align-items: stretch; gap: 0;
+        box-shadow: 0 4px 16px rgba(180, 127, 155, 0.08);
+        display: none;
+      }
+      .nav-links.open { display: flex; animation: fadeIn 0.2s; }
+      nav a {
+        font-size: 1.08rem; padding: 14px 0; margin: 0; border-radius: 0;
+        border-bottom: 1px solid var(--color-border); text-align: center; width: 100%;
+      }
+      .hamburger { display: flex; }
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
   </style>
 </head>
 <body>
