@@ -102,53 +102,43 @@
     transform: translateY(-8px) scale(1.04);
     box-shadow: 0 8px 24px rgba(214,51,132,0.18);
   }
-  .product-card img {
+  /* 商品主圖輪播 */
+  .slider {
+    position: relative;
     width: 100%;
     max-width: 320px;
-    max-height: 240px;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .slider-main-img {
+    width: 100%;
+    height: 240px;
     object-fit: cover;
     border-radius: 12px;
-    margin-bottom: 1rem;
     background: #f6f6f6;
+    display: block;
   }
-  .multi-img {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.7);
+    border: none;
+    color: #d63384;
+    font-size: 1.5rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
   }
-  .multi-img img {
-    width: 180px;
-    height: 135px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    background: #f6f6f6;
-    transition: transform 0.3s;
-  }
-  .multi-img img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 4px 12px rgba(214,51,132,0.15);
-  }
-  .product-card h4 {
-    font-size: 1.13rem;
-    margin: 0.3rem 0 0.2rem 0;
-    color: #cc3366;
-    font-weight: normal;
-    text-align: center;
-    font-family: 'POP Gothic', 'Noto Sans TC', Arial, sans-serif;
-  }
-  .product-card p {
-    margin: 0.2rem 0;
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
-    font-family: 'Noto Sans TC', Arial, sans-serif;
-  }
+  .slider-arrow.left { left: 8px; }
+  .slider-arrow.right { right: 8px; }
+  .slider-arrow:active { background: #ffe4ec; }
   @media (max-width: 1000px) {
     .product-card { width: calc(50% - 2rem); min-width: 0; }
-    .multi-img img { width: 38vw; height: 28vw; }
+    .slider-main-img { height: 38vw; min-height: 120px; }
   }
   @media (max-width: 768px) {
     body {
@@ -176,13 +166,9 @@
       width: 100% !important;
       min-width: 0;
     }
-    .product-card img {
-      max-width: 100%;
-    }
-    .multi-img img {
-      width: 90vw;
-      height: auto;
-      max-width: 100%;
+    .slider-main-img {
+      height: 38vw;
+      min-height: 120px;
     }
   }
 </style>
@@ -203,83 +189,140 @@
 <main>
   <h2>📦 商品區 Products</h2>
   <div class="product-grid">
+
     <div class="product-card">
-      <div class="multi-img">
-        <img src="images/328laksa袋裝圖.jpg" alt="328 Laksa" />
-        <img src="images/328laksa袋裝圖2.jpg" alt="328 Laksa 2" />
-        <img src="images/328laksa袋裝圖3.jpg" alt="328 Laksa 3" />
+      <div class="slider" data-images='["images/328laksa袋裝圖.jpg","images/328laksa袋裝圖2.jpg","images/328laksa袋裝圖3.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/328laksa袋裝圖.jpg" alt="328 Laksa" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
       </div>
       <h4>☆328加東叻沙 x Nissin日清泡麵組 - 5包*113g /袋☆</h4>
       <p>分類：泡麵 🇸🇬 新加坡</p>
       <p>價格：NT$ 380</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="beryl's 杏仁苦甜巧克力" />
+      <div class="slider" data-images='["images/beryl\'s 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg" alt="beryl's 杏仁苦甜巧克力" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
+      </div>
       <h4>☆beryl's 罐裝 杏仁苦甜巧克力（黑棕蓋）450g☆</h4>
       <p>分類：零食 🇲🇾 馬來西亞</p>
       <p>價格：NT$ 390</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <img src="images/beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg" alt="beryl's 杏仁綜合口味巧克力" />
+      <div class="slider" data-images='["images/beryl\'s 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg" alt="beryl's 杏仁綜合口味巧克力" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
+      </div>
       <h4>☆beryl's 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g☆</h4>
       <p>分類：零食 🇲🇾 馬來西亞</p>
       <p>價格：NT$ 390</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <div class="multi-img">
-        <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee 傳統咖椰醬" />
-        <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g2.jpg" alt="Hock Kee 傳統咖椰醬2" />
+      <div class="slider" data-images='["images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg","images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g2.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg" alt="Hock Kee 傳統咖椰醬" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
       </div>
       <h4>☆Hock Kee (福氣安康) 傳統海南咖椰醬 220g☆</h4>
       <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
       <p>價格：NT$ 290</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <div class="multi-img">
-        <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg" alt="Hock Kee 香蘭咖椰醬" />
-        <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g2.jpg" alt="Hock Kee 香蘭咖椰醬2" />
+      <div class="slider" data-images='["images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg","images/Hock Kee (福氣安康) 香蘭咖椰醬 220g2.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg" alt="Hock Kee 香蘭咖椰醬" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
       </div>
       <h4>☆Hock Kee (福氣安康) 香蘭咖椰醬 220g☆</h4>
       <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
       <p>價格：NT$ 290</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <img src="images/LFC_Hello_Kitty.jpg" alt="LFC Hello Kitty 10' Plush" />
+      <div class="slider" data-images='["images/LFC_Hello_Kitty.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/LFC_Hello_Kitty.jpg" alt="LFC Hello Kitty 10' Plush" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
+      </div>
       <h4>☆利物浦~LFC Hello Kitty 10' Plush☆</h4>
       <p>分類：角色主題 🇸🇬 新加坡</p>
       <p>價格：NT$ 290</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <img src="images/華陽香椰咖椰醬 270g.jpg" alt="華陽香椰咖椰醬" />
+      <div class="slider" data-images='["images/華陽香椰咖椰醬 270g.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/華陽香椰咖椰醬 270g.jpg" alt="華陽香椰咖椰醬" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
+      </div>
       <h4>☆華陽 Oriental Kopi Kaya 香椰咖椰醬 270g☆</h4>
       <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
       <p>價格：NT$ 300</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <img src="images/華陽斑蘭咖椰醬 270g.jpg" alt="華陽斑蘭咖椰醬" />
+      <div class="slider" data-images='["images/華陽斑蘭咖椰醬 270g.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/華陽斑蘭咖椰醬 270g.jpg" alt="華陽斑蘭咖椰醬" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
+      </div>
       <h4>☆華陽 Oriental Kopi Kaya 斑蘭咖椰醬 270g☆</h4>
       <p>分類：咖椰醬 🇲🇾 馬來西亞</p>
       <p>價格：NT$ 300</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
     <div class="product-card">
-      <div class="multi-img">
-        <img src="images/Houten Chilli Tapioca Chips袋8包35g.jpg" alt="豪登叁巴木薯片" />
-        <img src="images/Houten Chilli Tapioca Chips袋8包35g2.jpg" alt="豪登叁巴木薯片2" />
+      <div class="slider" data-images='["images/Houten Chilli Tapioca Chips袋8包35g.jpg","images/Houten Chilli Tapioca Chips袋8包35g2.jpg"]'>
+        <button class="slider-arrow left">&#8592;</button>
+        <img src="images/Houten Chilli Tapioca Chips袋8包35g.jpg" alt="豪登叁巴木薯片" class="slider-main-img" />
+        <button class="slider-arrow right">&#8594;</button>
       </div>
       <h4>☆豪登叁巴木薯片 / Houten Chilli Tapioca Chips袋裝 - 8包*35g /袋☆</h4>
       <p>分類：泡麵 🇸🇬 新加坡</p>
       <p>價格：NT$ 260</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
+
   </div>
 </main>
+
+<script>
+document.querySelectorAll('.slider').forEach(function(slider){
+  const imgs = JSON.parse(slider.getAttribute('data-images'));
+  let idx = 0;
+  const mainImg = slider.querySelector('.slider-main-img');
+  const leftBtn = slider.querySelector('.slider-arrow.left');
+  const rightBtn = slider.querySelector('.slider-arrow.right');
+  function showImg(i) {
+    idx = (i + imgs.length) % imgs.length;
+    mainImg.src = imgs[idx];
+  }
+  leftBtn.onclick = () => showImg(idx - 1);
+  rightBtn.onclick = () => showImg(idx + 1);
+  // 手機滑動支援
+  let startX = 0;
+  mainImg.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+  mainImg.addEventListener('touchend', e => {
+    let dx = e.changedTouches[0].clientX - startX;
+    if(dx > 30) showImg(idx - 1);
+    else if(dx < -30) showImg(idx + 1);
+  });
+});
+</script>
 </body>
 </html>
