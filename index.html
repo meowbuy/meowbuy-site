@@ -51,7 +51,7 @@
       margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.15s;
       background: none;
     }
     nav a[aria-current="page"], nav a.active {
@@ -61,6 +61,8 @@
     nav a:hover, nav a:focus {
       background-color: var(--color-highlight);
       color: #fff;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.10);
+      transform: scale(1.07);
       outline: none;
     }
     .hamburger {
@@ -101,17 +103,53 @@
       .hamburger { display: flex; }
     }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
-    header { margin-top: 60px; text-align: center; padding-bottom: 1rem; }
+    header {
+      margin-top: 60px;
+      text-align: center;
+      padding-bottom: 1rem;
+      position: relative;
+      min-height: 160px;
+    }
     header h1 {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 3rem;
       color: var(--color-secondary);
       letter-spacing: 2px;
       margin: 0 0 1rem 0;
+      animation: floatTitle 2.5s infinite alternate;
+    }
+    @keyframes floatTitle {
+      from { transform: translateY(0);}
+      to { transform: translateY(-8px);}
     }
     .header-illustration {
-      display: block; max-width: 320px; width: 90%; margin: 0 auto 1.5rem auto;
-      border-radius: 24px; box-shadow: 0 6px 16px rgba(180, 127, 155, 0.25); background: #fff7fa;
+      display: block;
+      max-width: 320px;
+      width: 90%;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 24px;
+      box-shadow: 0 6px 16px rgba(180, 127, 155, 0.25);
+      background: #fff7fa;
+      position: relative;
+      z-index: 1;
+      animation: floatPic 3s infinite alternate;
+    }
+    @keyframes floatPic {
+      from { transform: translateY(0);}
+      to { transform: translateY(-10px);}
+    }
+    .brand-cat {
+      position: absolute;
+      right: 12px;
+      bottom: 0;
+      width: 54px;
+      height: 54px;
+      z-index: 2;
+      animation: catWiggle 2.5s infinite alternate;
+    }
+    @keyframes catWiggle {
+      from { transform: rotate(-5deg);}
+      to { transform: rotate(7deg);}
     }
     .banner-subtitle {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
@@ -119,6 +157,15 @@
       color: var(--color-primary);
       margin: 0 0 2rem 0;
       letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+      animation: subtitleFade 2.2s infinite alternate;
+    }
+    @keyframes subtitleFade {
+      from { opacity: 1;}
+      to { opacity: 0.85;}
     }
     main { text-align: center; }
     .section-title {
@@ -135,6 +182,7 @@
       max-width: 600px;
       margin: 0 auto 2.2rem auto;
       font-size: 1.13rem;
+      margin-bottom: 1.5em;
     }
     .highlight-text {
       font-family: 'POP Gothic', 'Noto Sans TC', sans-serif;
@@ -158,7 +206,7 @@
       font-weight: 700;
       margin: 0 16px 10px;
       box-shadow: 0 6px 14px rgba(180, 127, 155, 0.3);
-      transition: background-color 0.3s, box-shadow 0.3s;
+      transition: background-color 0.3s, box-shadow 0.3s, transform 0.18s;
       display: inline-block;
       border: none;
     }
@@ -166,6 +214,7 @@
       background-color: var(--color-highlight);
       box-shadow: 0 8px 20px rgba(214,51,132,0.20);
       color: #fff;
+      transform: scale(1.06);
     }
     .btn.alt {
       background-color: var(--color-accent);
@@ -175,10 +224,38 @@
       background-color: #c4b1c2;
       color: #5e3a57;
     }
-    .social-links { margin-top: 2.5rem; text-align: center; }
-    .social-links a { display: inline-block; vertical-align: middle; margin: 0 12px; transition: color 0.3s ease; }
-    .social-links svg { width: 2.1rem; height: 2.1rem; fill: var(--color-primary); transition: fill 0.3s; }
-    .social-links a:hover svg, .social-links a:focus svg { fill: var(--color-highlight); }
+    .social-links {
+      margin-top: 2.5rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(180, 127, 155, 0.08);
+      font-size: 1.7rem;
+      color: #fff;
+      border: none;
+    }
+    .social-links a:hover, .social-links a:focus {
+      background: var(--color-highlight);
+      transform: scale(1.09);
+      color: #fff;
+    }
+    .social-links svg {
+      width: 1.6em;
+      height: 1.6em;
+      fill: #fff;
+      display: block;
+    }
     footer {
       margin-top: 3rem;
       text-align: center;
@@ -186,6 +263,15 @@
       color: var(--color-primary);
       letter-spacing: 0.7px;
       padding-bottom: 1.5rem;
+      position: relative;
+    }
+    .footer-cat {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
+      margin-bottom: -7px;
+      width: 32px;
+      height: 32px;
     }
     @media (max-width: 600px) {
       body { font-size: 1rem; padding: 1.5rem 0.5rem; }
@@ -205,7 +291,8 @@
       .section-title { font-size: 1.08rem; margin: 1.5rem 0 0.7rem 0; }
       .highlight-text { font-size: 1.15rem; margin: 1.5rem 0 1.2rem 0; }
       .btn { font-size: 1rem; padding: 12px 22px; margin: 0 8px 10px; }
-      .social-links svg { width: 1.5rem; height: 1.5rem; }
+      .social-links a { width: 38px; height: 38px; font-size: 1.3rem; }
+      .social-links svg { width: 1.2em; height: 1.2em; }
       footer { font-size: 0.85rem; }
     }
   </style>
@@ -226,7 +313,19 @@
   <header>
     <h1>🎀密探ㄚ頭代GO🎀 の故事</h1>
     <img src="https://yourdomain.com/images/Xun-Bao-Nu-Hai.jpg" alt="密探小女孩覓寶手繪插畫" class="header-illustration" />
-    <div class="banner-subtitle">陪你一起尋寶的溫柔密探</div>
+    <!-- 品牌小喵 SVG -->
+    <svg class="brand-cat" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="44" rx="22" ry="14" fill="#fff" stroke="#b47f9b" stroke-width="2"/>
+      <ellipse cx="32" cy="34" rx="14" ry="14" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+      <ellipse cx="26" cy="34" rx="2.5" ry="2.5" fill="#b47f9b"/>
+      <ellipse cx="38" cy="34" rx="2.5" ry="2.5" fill="#b47f9b"/>
+      <ellipse cx="32" cy="38" rx="4.5" ry="2.5" fill="#d63384"/>
+      <polygon points="18,21 24,10 28,23" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+      <polygon points="46,21 40,10 36,23" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+    </svg>
+    <div class="banner-subtitle">
+      <span>💌</span>陪你一起尋寶的溫柔密探<span>🌷</span>
+    </div>
   </header>
   <main>
     <h2 class="section-title">品牌故事 Brand Story</h2>
@@ -255,15 +354,18 @@
     </div>
     <div class="social-links" aria-label="社群連結">
       <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#b47f9b" stroke-width="2"/><circle cx="22" cy="10" r="1.2" fill="#b47f9b"/></svg>
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.2" fill="#fff"/></svg>
       </a>
       <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#b47f9b" stroke-width="2"/><path d="M20 16h-2v-2c0-0.55 0.45-1 1-1h1v-3h-2.5C15.12 10 14 11.12 14 12.5V14h-2v3h2v7h3v-7h2l0.5-3z" fill="#b47f9b"/></svg>
+        <svg viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#fff" stroke-width="2"/><path d="M20 16h-2v-2c0-0.55 0.45-1 1-1h1v-3h-2.5C15.12 10 14 11.12 14 12.5V14h-2v3h2v7h3v-7h2l0.5-3z" fill="#fff"/></svg>
       </a>
     </div>
   </main>
   <footer>
     © 2025 meowbuy | 聯絡信箱：<a href="mailto:hello@meowbuy.com" style="color:var(--color-primary);text-decoration:underline;">hello@meowbuy.com</a>
+    <span class="footer-cat">
+      <svg viewBox="0 0 32 32"><ellipse cx="16" cy="20" rx="10" ry="6" fill="#fff" stroke="#b47f9b" stroke-width="1.5"/><ellipse cx="16" cy="14" rx="6" ry="6" fill="#fff7fa" stroke="#b47f9b" stroke-width="1.5"/><ellipse cx="13" cy="14" rx="1.2" ry="1.2" fill="#b47f9b"/><ellipse cx="19" cy="14" rx="1.2" ry="1.2" fill="#b47f9b"/><ellipse cx="16" cy="17" rx="2" ry="1" fill="#d63384"/></svg>
+    </span>
   </footer>
   <script>
     // 三明治選單
