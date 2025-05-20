@@ -19,10 +19,15 @@
     font-size: 16px;
     line-height: 1.6;
   }
-  h1, h2, h3, h4 {
+  h1, h2 {
     font-family: 'POP Gothic', 'Noto Sans TC', Arial, sans-serif;
     letter-spacing: 1px;
     font-weight: normal;
+  }
+  h3, h4 {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
   }
   nav {
     position: fixed;
@@ -137,6 +142,23 @@
   .slider-arrow.left { left: 8px; }
   .slider-arrow.right { right: 8px; }
   .slider-arrow:active { background: #ffe4ec; }
+  .product-card h4 {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    font-size: 1.13rem;
+    font-weight: 700;
+    color: #cc3366;
+    letter-spacing: 0.5px;
+    margin: 0.3rem 0 0.2rem 0;
+    text-align: center;
+  }
+  .product-card p {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin: 0.2rem 0;
+    text-align: center;
+  }
   @media (max-width: 1000px) {
     .product-card { width: calc(50% - 2rem); min-width: 0; }
     .slider-main-img { height: 38vw; min-height: 120px; }
