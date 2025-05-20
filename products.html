@@ -5,14 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>meowbuy 商品區 Products</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+  @font-face {
+    font-family: 'POP Gothic';
+    src: url('fonts/PopGothicCjkTc-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
   body {
-    font-family: 'ZCOOL KuaiLe', 'Noto Sans TC', Arial, sans-serif;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
     margin: 0; padding: 0;
     background-color: #fff0f5;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'POP Gothic', 'Noto Sans TC', Arial, sans-serif;
+    letter-spacing: 1px;
+    font-weight: normal;
   }
   nav {
     position: fixed;
@@ -125,14 +135,16 @@
     font-size: 1.13rem;
     margin: 0.3rem 0 0.2rem 0;
     color: #cc3366;
-    font-weight: 700;
+    font-weight: normal;
     text-align: center;
+    font-family: 'POP Gothic', 'Noto Sans TC', Arial, sans-serif;
   }
   .product-card p {
     margin: 0.2rem 0;
     font-size: 1rem;
     color: #555;
     text-align: center;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
   }
   @media (max-width: 1000px) {
     .product-card { width: calc(50% - 2rem); min-width: 0; }
