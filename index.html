@@ -7,7 +7,6 @@
   <meta name="description" content="萌萌喵陪你一起尋寶，代購新加坡與馬來西亞人氣商品。密探ㄚ頭代GO，溫柔陪伴您的代購小密探。" />
   <link rel="canonical" href="https://yourdomain.com/" />
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-
   <style>
     :root {
       --color-primary: #b47f9b;
@@ -19,14 +18,12 @@
     @font-face {
       font-family: 'POP Gothic';
       src: url('fonts/PopGothicCjkTc-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
     }
     body {
       font-family: 'POP Gothic', 'Noto Sans TC', sans-serif;
       margin: 0; padding: 2rem 1.5rem;
       background-color: var(--color-bg);
-      color: var(--color-text, #6b3a5b);
+      color: var(--color-secondary);
       font-size: 1.15rem;
       line-height: 2.1;
       max-width: 720px;
@@ -39,18 +36,12 @@
       background-color: var(--color-bg);
       box-shadow: 0 2px 8px rgba(183, 126, 154, 0.15);
       display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
       align-items: center;
       z-index: 1000;
       height: 60px;
-      padding: 0;
+      padding: 0 0.5rem;
     }
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
     nav a {
       color: var(--color-primary);
       text-decoration: none;
@@ -94,46 +85,23 @@
       transition: 0.3s;
     }
     @media (max-width: 650px) {
-      nav {
-        justify-content: flex-end;
-        height: 54px;
-      }
+      nav { justify-content: flex-end; height: 54px; }
       .nav-links {
-        position: absolute;
-        top: 54px; right: 0; left: 0;
+        position: absolute; top: 54px; right: 0; left: 0;
         background: var(--color-bg);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
         box-shadow: 0 4px 16px rgba(180, 127, 155, 0.08);
         display: none;
       }
-      .nav-links.open {
-        display: flex;
-        animation: fadeIn 0.2s;
-      }
+      .nav-links.open { display: flex; animation: fadeIn 0.2s; }
       nav a {
-        font-size: 1.08rem;
-        padding: 14px 0;
-        margin: 0;
-        border-radius: 0;
-        border-bottom: 1px solid var(--color-border);
-        text-align: center;
-        width: 100%;
+        font-size: 1.08rem; padding: 14px 0; margin: 0; border-radius: 0;
+        border-bottom: 1px solid var(--color-border); text-align: center; width: 100%;
       }
-      .hamburger {
-        display: flex;
-      }
+      .hamburger { display: flex; }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    header {
-      margin-top: 60px;
-      text-align: center;
-      padding-bottom: 1rem;
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
+    header { margin-top: 60px; text-align: center; padding-bottom: 1rem; }
     header h1 {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 3rem;
@@ -142,13 +110,8 @@
       margin: 0 0 1rem 0;
     }
     .header-illustration {
-      display: block;
-      max-width: 320px;
-      width: 90%;
-      margin: 0 auto 1.5rem auto;
-      border-radius: 24px;
-      box-shadow: 0 6px 16px rgba(180, 127, 155, 0.25);
-      background: #fff7fa;
+      display: block; max-width: 320px; width: 90%; margin: 0 auto 1.5rem auto;
+      border-radius: 24px; box-shadow: 0 6px 16px rgba(180, 127, 155, 0.25); background: #fff7fa;
     }
     .banner-subtitle {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
@@ -157,9 +120,7 @@
       margin: 0 0 2rem 0;
       letter-spacing: 0.05em;
     }
-    main {
-      text-align: center;
-    }
+    main { text-align: center; }
     .section-title {
       font-size: 1.3rem;
       color: var(--color-secondary);
@@ -183,15 +144,9 @@
       margin: 2.5rem 0 2rem 0;
       letter-spacing: 0.05em;
       line-height: 1.3;
-      text-shadow:
-        1px 1px 2px rgba(122, 74, 109, 0.4),
-        0 0 8px rgba(196, 177, 194, 0.6);
+      text-shadow: 1px 1px 2px rgba(122, 74, 109, 0.4), 0 0 8px rgba(196, 177, 194, 0.6);
     }
-    .btn-group {
-      text-align: center;
-      margin-top: 3rem;
-      margin-bottom: 2.5rem;
-    }
+    .btn-group { text-align: center; margin-top: 3rem; margin-bottom: 2.5rem; }
     .btn {
       background-color: var(--color-primary);
       color: #fff;
@@ -220,26 +175,10 @@
       background-color: #c4b1c2;
       color: #5e3a57;
     }
-    .social-links {
-      margin-top: 2.5rem;
-      text-align: center;
-    }
-    .social-links a {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 12px;
-      transition: color 0.3s ease;
-    }
-    .social-links svg {
-      width: 2.1rem;
-      height: 2.1rem;
-      fill: var(--color-primary);
-      transition: fill 0.3s;
-    }
-    .social-links a:hover svg,
-    .social-links a:focus svg {
-      fill: var(--color-highlight);
-    }
+    .social-links { margin-top: 2.5rem; text-align: center; }
+    .social-links a { display: inline-block; vertical-align: middle; margin: 0 12px; transition: color 0.3s ease; }
+    .social-links svg { width: 2.1rem; height: 2.1rem; fill: var(--color-primary); transition: fill 0.3s; }
+    .social-links a:hover svg, .social-links a:focus svg { fill: var(--color-highlight); }
     footer {
       margin-top: 3rem;
       text-align: center;
@@ -249,15 +188,8 @@
       padding-bottom: 1.5rem;
     }
     @media (max-width: 600px) {
-      body {
-        font-size: 1rem;
-        padding: 1.5rem 0.5rem;
-      }
-      nav {
-        flex-wrap: wrap;
-        padding: 0.5rem 0;
-        height: auto;
-      }
+      body { font-size: 1rem; padding: 1.5rem 0.5rem; }
+      nav { flex-wrap: wrap; padding: 0.5rem 0; height: auto; }
       nav a {
         flex: 1 1 46%;
         min-width: 120px;
@@ -268,51 +200,34 @@
         border-radius: 16px;
         box-sizing: border-box;
       }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      .banner-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 1.3rem;
-      }
-      .section-title {
-        font-size: 1.08rem;
-        margin: 1.5rem 0 0.7rem 0;
-      }
-      .highlight-text {
-        font-size: 1.15rem;
-        margin: 1.5rem 0 1.2rem 0;
-      }
-      .btn {
-        font-size: 1rem;
-        padding: 12px 22px;
-        margin: 0 8px 10px;
-      }
-      .social-links svg {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-      footer {
-        font-size: 0.85rem;
-      }
+      header h1 { font-size: 2.2rem; }
+      .banner-subtitle { font-size: 1.2rem; margin-bottom: 1.3rem; }
+      .section-title { font-size: 1.08rem; margin: 1.5rem 0 0.7rem 0; }
+      .highlight-text { font-size: 1.15rem; margin: 1.5rem 0 1.2rem 0; }
+      .btn { font-size: 1rem; padding: 12px 22px; margin: 0 8px 10px; }
+      .social-links svg { width: 1.5rem; height: 1.5rem; }
+      footer { font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html" aria-current="page">首頁 Home</a>
-    <a href="products.html">商品區 Products</a>
-    <a href="custom.html">客製代購 Personalized Shopping</a>
-    <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
-    <a href="contact.html">聯絡我們 Contact</a>
+    <button class="hamburger" aria-label="開啟選單" aria-controls="mainNav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="mainNav">
+      <a href="index.html" aria-current="page">首頁 Home</a>
+      <a href="products.html">商品區 Products</a>
+      <a href="custom.html">客製代購 Personalized Shopping</a>
+      <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
+      <a href="contact.html">聯絡我們 Contact</a>
+    </div>
   </nav>
-
   <header>
     <h1>🎀密探ㄚ頭代GO🎀 の故事</h1>
     <img src="https://yourdomain.com/images/Xun-Bao-Nu-Hai.jpg" alt="密探小女孩覓寶手繪插畫" class="header-illustration" />
     <div class="banner-subtitle">陪你一起尋寶的溫柔密探</div>
   </header>
-
   <main>
     <h2 class="section-title">品牌故事 Brand Story</h2>
     <p class="story-text">
@@ -329,33 +244,41 @@
 代購不只是買賣，更是種值得長久的信賴陪伴。
 讓每次購物都像是被用心照顧的過程。
     </p>
-
     <p class="highlight-text">🌸 療癒其實很簡單，一買一拆剛剛好 🌸</p>
-
     <p class="story-text">
 用心の經營，期待在這個互動及有溫度的小天地裡，
 與您一起分享、成長。
     </p>
-
     <div class="btn-group">
       <a href="products.html" class="btn">立即選購</a>
       <a href="about.html" class="btn alt">了解更多</a>
     </div>
-
     <div class="social-links" aria-label="社群連結">
       <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">
-        <!-- IG SVG -->
         <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#b47f9b" stroke-width="2"/><circle cx="22" cy="10" r="1.2" fill="#b47f9b"/></svg>
       </a>
       <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
-        <!-- FB SVG -->
         <svg viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#b47f9b" stroke-width="2"/><path d="M20 16h-2v-2c0-0.55 0.45-1 1-1h1v-3h-2.5C15.12 10 14 11.12 14 12.5V14h-2v3h2v7h3v-7h2l0.5-3z" fill="#b47f9b"/></svg>
       </a>
     </div>
   </main>
-
   <footer>
     © 2025 meowbuy | 聯絡信箱：<a href="mailto:hello@meowbuy.com" style="color:var(--color-primary);text-decoration:underline;">hello@meowbuy.com</a>
   </footer>
+  <script>
+    // 三明治選單
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(window.innerWidth <= 650) navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
