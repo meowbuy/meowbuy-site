@@ -32,15 +32,21 @@
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 60px;
     background-color: #f8f9fa;
-    padding: 1rem 0;
-    text-align: center;
     box-shadow: 0 2px 8px rgba(214,51,132,0.15);
     z-index: 1000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
   }
   nav a {
-    margin: 0 1rem;
     color: #d63384;
     text-decoration: none;
     font-weight: 700;
@@ -50,11 +56,75 @@
     transition: background-color 0.3s, color 0.3s;
     font-family: 'POP Gothic', 'Noto Sans TC', Arial, sans-serif;
     letter-spacing: 1px;
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+  nav a[aria-current="page"], nav a.active {
+    background-color: #d63384;
+    color: #fff;
   }
   nav a:hover, nav a:focus {
     background-color: #d63384;
     color: #fff;
     outline: none;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 4px;
+    margin: 4px 0;
+    background: #d63384;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  @media (max-width: 650px) {
+    nav {
+      justify-content: flex-end;
+      padding: 0 0.5rem;
+      height: 54px;
+    }
+    .nav-links {
+      position: absolute;
+      top: 54px; right: 0; left: 0;
+      background: #f8f9fa;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      box-shadow: 0 4px 16px rgba(214,51,132,0.08);
+      display: none;
+    }
+    .nav-links.open {
+      display: flex;
+      animation: fadeIn 0.2s;
+    }
+    nav a {
+      font-size: 1.06rem;
+      padding: 14px 0;
+      margin: 0;
+      border-radius: 0;
+      border-bottom: 1px solid #f3d4e2;
+      text-align: center;
+      width: 100%;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px);}
+    to { opacity: 1; transform: translateY(0);}
   }
   header {
     background-color: #ffe4ec;
@@ -169,11 +239,6 @@
     body {
       font-size: 14px;
     }
-    nav a {
-      margin: 0 0.5rem;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-    }
     header h1 {
       font-size: 1.6rem;
     }
@@ -205,11 +270,18 @@
 </head>
 <body>
 <nav>
-  <a href="index.html">首頁 Home</a>
-  <a href="products.html">商品區 Products</a>
-  <a href="custom.html">客製代購 Personalized Shopping</a>
-  <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
-  <a href="contact.html">聯絡我們 Contact</a>
+  <button class="hamburger" aria-label="開啟選單" aria-controls="mainNav" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="mainNav">
+    <a href="index.html">首頁 Home</a>
+    <a href="products.html" aria-current="page">商品區 Products</a>
+    <a href="custom.html">客製代購 Personalized Shopping</a>
+    <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
+    <a href="contact.html">聯絡我們 Contact</a>
+  </div>
 </nav>
 
 <header>
@@ -231,7 +303,6 @@
       <p>價格：NT$ 380</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/beryl\'s 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -243,7 +314,6 @@
       <p>價格：NT$ 390</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/beryl\'s 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -255,7 +325,6 @@
       <p>價格：NT$ 390</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg","images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g2.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -267,7 +336,6 @@
       <p>價格：NT$ 290</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg","images/Hock Kee (福氣安康) 香蘭咖椰醬 220g2.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -279,7 +347,6 @@
       <p>價格：NT$ 290</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/LFC_Hello_Kitty.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -291,7 +358,6 @@
       <p>價格：NT$ 290</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/華陽香椰咖椰醬 270g.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -303,7 +369,6 @@
       <p>價格：NT$ 300</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/華陽斑蘭咖椰醬 270g.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -315,7 +380,6 @@
       <p>價格：NT$ 300</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
     <div class="product-card">
       <div class="slider" data-images='["images/Houten Chilli Tapioca Chips袋8包35g.jpg","images/Houten Chilli Tapioca Chips袋8包35g2.jpg"]'>
         <button class="slider-arrow left">&#8592;</button>
@@ -327,32 +391,47 @@
       <p>價格：NT$ 260</p>
       <p style="color:#d63384;">【預購商品･請先詢問】</p>
     </div>
-
   </div>
 </main>
 
 <script>
-document.querySelectorAll('.slider').forEach(function(slider){
-  const imgs = JSON.parse(slider.getAttribute('data-images'));
-  let idx = 0;
-  const mainImg = slider.querySelector('.slider-main-img');
-  const leftBtn = slider.querySelector('.slider-arrow.left');
-  const rightBtn = slider.querySelector('.slider-arrow.right');
-  function showImg(i) {
-    idx = (i + imgs.length) % imgs.length;
-    mainImg.src = imgs[idx];
-  }
-  leftBtn.onclick = () => showImg(idx - 1);
-  rightBtn.onclick = () => showImg(idx + 1);
-  // 手機滑動支援
-  let startX = 0;
-  mainImg.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-  mainImg.addEventListener('touchend', e => {
-    let dx = e.changedTouches[0].clientX - startX;
-    if(dx > 30) showImg(idx - 1);
-    else if(dx < -30) showImg(idx + 1);
+  // 三明治選單
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-});
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 650) navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // 商品輪播
+  document.querySelectorAll('.slider').forEach(function(slider){
+    const imgs = JSON.parse(slider.getAttribute('data-images'));
+    let idx = 0;
+    const mainImg = slider.querySelector('.slider-main-img');
+    const leftBtn = slider.querySelector('.slider-arrow.left');
+    const rightBtn = slider.querySelector('.slider-arrow.right');
+    function showImg(i) {
+      idx = (i + imgs.length) % imgs.length;
+      mainImg.src = imgs[idx];
+    }
+    leftBtn.onclick = () => showImg(idx - 1);
+    rightBtn.onclick = () => showImg(idx + 1);
+    // 手機滑動支援
+    let startX = 0;
+    mainImg.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+    mainImg.addEventListener('touchend', e => {
+      let dx = e.changedTouches[0].clientX - startX;
+      if(dx > 30) showImg(idx - 1);
+      else if(dx < -30) showImg(idx + 1);
+    });
+  });
 </script>
 </body>
 </html>
+
