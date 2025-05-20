@@ -51,7 +51,7 @@
       margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.15s;
       background: none;
     }
     nav a[aria-current="page"], nav a.active {
@@ -61,6 +61,8 @@
     nav a:hover, nav a:focus {
       background-color: var(--color-highlight);
       color: #fff;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.10);
+      transform: scale(1.07);
       outline: none;
     }
     .hamburger {
@@ -101,13 +103,37 @@
       .hamburger { display: flex; }
     }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
-    header { margin-top: 60px; text-align: center; padding-bottom: 1rem; }
+    header {
+      margin-top: 60px;
+      text-align: center;
+      padding-bottom: 1rem;
+      position: relative;
+      min-height: 120px;
+    }
     header h1 {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 2.2rem;
       color: var(--color-secondary);
       letter-spacing: 2px;
       margin: 0 0 1rem 0;
+      animation: floatTitle 2.5s infinite alternate;
+    }
+    @keyframes floatTitle {
+      from { transform: translateY(0);}
+      to { transform: translateY(-8px);}
+    }
+    .brand-cat {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      width: 54px;
+      height: 54px;
+      z-index: 2;
+      animation: catWiggle 2.5s infinite alternate;
+    }
+    @keyframes catWiggle {
+      from { transform: rotate(-5deg);}
+      to { transform: rotate(7deg);}
     }
     main {
       background: #fff;
@@ -172,12 +198,13 @@
       font-size: 1.1rem;
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, transform 0.15s;
       margin-top: 0.5rem;
     }
     button:hover, button:focus {
       background-color: var(--color-highlight);
       outline: none;
+      transform: scale(1.06);
     }
     .contact-info {
       margin-top: 2rem;
@@ -198,21 +225,71 @@
       text-decoration: underline;
       outline: none;
     }
+    .social-links {
+      margin-top: 2.5rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(180, 127, 155, 0.08);
+      font-size: 1.7rem;
+      color: #fff;
+      border: none;
+    }
+    .social-links a:hover, .social-links a:focus {
+      background: var(--color-highlight);
+      transform: scale(1.09);
+      color: #fff;
+    }
+    .social-links svg {
+      width: 1.6em;
+      height: 1.6em;
+      fill: #fff;
+      display: block;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.98rem;
+      color: var(--color-primary);
+      letter-spacing: 0.7px;
+      padding-bottom: 1.5rem;
+      position: relative;
+    }
+    .footer-cat {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
+      margin-bottom: -7px;
+      width: 32px;
+      height: 32px;
+    }
     @media (max-width: 600px) {
       body { font-size: 1.1rem; padding: 1.5rem 1rem; }
       nav a { margin: 0 0.5rem; font-size: 0.9rem; padding: 6px 8px; }
       header h1 { font-size: 2.2rem; }
       h2 { font-size: 1.4rem; }
       main { padding: 1.5rem 1rem; margin: 1rem; }
+      .social-links a { width: 38px; height: 38px; font-size: 1.3rem; }
+      .social-links svg { width: 1.2em; height: 1.2em; }
+      footer { font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
   <nav>
     <button class="hamburger" aria-label="開啟選單" aria-controls="mainNav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="mainNav">
       <a href="index.html">首頁 Home</a>
@@ -223,10 +300,20 @@
     </div>
   </nav>
   <header>
-    <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
+    <h1>📬 聯絡我們 Contact</h1>
+    <!-- 品牌小喵 SVG -->
+    <svg class="brand-cat" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="44" rx="22" ry="14" fill="#fff" stroke="#b47f9b" stroke-width="2"/>
+      <ellipse cx="32" cy="34" rx="14" ry="14" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+      <ellipse cx="26" cy="34" rx="2.5" ry="2.5" fill="#b47f9b"/>
+      <ellipse cx="38" cy="34" rx="2.5" ry="2.5" fill="#b47f9b"/>
+      <ellipse cx="32" cy="38" rx="4.5" ry="2.5" fill="#d63384"/>
+      <polygon points="18,21 24,10 28,23" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+      <polygon points="46,21 40,10 36,23" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+    </svg>
   </header>
   <main>
-    <h2>📬 聯絡我們 Contact</h2>
+    <h2>歡迎聯絡我們</h2>
     <form action="mailto:your-email@example.com" method="post" enctype="text/plain" id="contact-form">
       <label for="name">姓名 Name</label>
       <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required />
@@ -246,9 +333,23 @@
         <a href="https://line.me/ti/p/cTE_jv9Vcz" target="_blank" rel="noopener">私人一對一聯絡</a>
       </p>
     </div>
+    <div class="social-links" aria-label="社群連結">
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.2" fill="#fff"/></svg>
+      </a>
+      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#fff" stroke-width="2"/><path d="M20 16h-2v-2c0-0.55 0.45-1 1-1h1v-3h-2.5C15.12 10 14 11.12 14 12.5V14h-2v3h2v7h3v-7h2l0.5-3z" fill="#fff"/></svg>
+      </a>
+    </div>
   </main>
+  <footer>
+    © 2025 meowbuy | 聯絡信箱：<a href="mailto:hello@meowbuy.com" style="color:var(--color-primary);text-decoration:underline;">hello@meowbuy.com</a>
+    <span class="footer-cat">
+      <svg viewBox="0 0 32 32"><ellipse cx="16" cy="20" rx="10" ry="6" fill="#fff" stroke="#b47f9b" stroke-width="1.5"/><ellipse cx="16" cy="14" rx="6" ry="6" fill="#fff7fa" stroke="#b47f9b" stroke-width="1.5"/><ellipse cx="13" cy="14" rx="1.2" ry="1.2" fill="#b47f9b"/><ellipse cx="19" cy="14" rx="1.2" ry="1.2" fill="#b47f9b"/><ellipse cx="16" cy="17" rx="2" ry="1" fill="#d63384"/></svg>
+    </span>
+  </footer>
   <script>
-    // 三明治選單功能
+    // 三明治選單
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
