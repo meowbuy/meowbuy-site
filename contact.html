@@ -7,28 +7,25 @@
   <meta name="description" content="歡迎加入我們的 LINE 社群與私訊聯絡！填寫表單或直接聯繫我們，meowbuy 期待與您互動。" />
   <link rel="canonical" href="https://yourdomain.com/contact.html" />
   <style>
+    :root {
+      --color-primary: #b47f9b;
+      --color-highlight: #d63384;
+      --color-secondary: #7a4a6d;
+      --color-bg: #f7f0f5;
+      --color-border: #ffc0cb;
+      --color-accent: #d9c7d9;
+    }
     @font-face {
       font-family: 'POP Gothic';
       src: url('fonts/PopGothicCjkTc-Regular.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    :root {
-      --color-primary: #b47f9b;
-      --color-secondary: #7a4a6d;
-      --color-bg: #f7f0f5;
-      --color-text: #6b3a5b;
-      --color-accent: #d9c7d9;
-      --color-border: #ffc0cb;
-      --color-highlight: #ff4d6d;
     }
     body {
       font-family: 'Noto Sans TC', 'POP Gothic', sans-serif;
       margin: 0; padding: 2rem 1.5rem;
       background-color: var(--color-bg);
-      color: var(--color-text);
-      font-size: 1.3rem;
-      line-height: 2.2;
+      color: var(--color-secondary);
+      font-size: 1.15rem;
+      line-height: 2.1;
       max-width: 720px;
       margin-left: auto;
       margin-right: auto;
@@ -38,36 +35,31 @@
       top: 0; left: 0; right: 0;
       background-color: var(--color-bg);
       box-shadow: 0 2px 8px rgba(183, 126, 154, 0.15);
+      display: flex;
+      align-items: center;
       z-index: 1000;
       height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 0 0.5rem;
     }
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
     nav a {
       color: var(--color-primary);
       text-decoration: none;
       font-weight: 700;
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 1.1rem;
+      margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
       transition: background-color 0.3s, color 0.3s;
-      margin: 0 0.5rem;
-      display: inline-block;
+      background: none;
     }
     nav a[aria-current="page"], nav a.active {
-      background-color: var(--color-secondary);
+      background-color: var(--color-highlight);
       color: #fff;
     }
     nav a:hover, nav a:focus {
-      background-color: var(--color-primary);
+      background-color: var(--color-highlight);
       color: #fff;
       outline: none;
     }
@@ -85,233 +77,3 @@
     }
     .hamburger span {
       display: block;
-      width: 26px;
-      height: 4px;
-      margin: 4px 0;
-      background: var(--color-primary);
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-    @media (max-width: 650px) {
-      nav {
-        justify-content: flex-end;
-        height: 54px;
-      }
-      .nav-links {
-        position: absolute;
-        top: 54px; right: 0; left: 0;
-        background: var(--color-bg);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        box-shadow: 0 4px 16px rgba(180, 127, 155, 0.08);
-        display: none;
-      }
-      .nav-links.open {
-        display: flex;
-        animation: fadeIn 0.2s;
-      }
-      nav a {
-        font-size: 1.08rem;
-        padding: 14px 0;
-        margin: 0;
-        border-radius: 0;
-        border-bottom: 1px solid #f0e3f0;
-        text-align: center;
-        width: 100%;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    header {
-      margin-top: 60px;
-      text-align: center;
-      padding-bottom: 1rem;
-    }
-    header h1 {
-      font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
-      font-size: 2.2rem;
-      color: var(--color-secondary);
-      letter-spacing: 2px;
-      margin: 0 0 1rem 0;
-    }
-    main {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(180, 127, 155, 0.12);
-      padding: 2rem 1.5rem;
-      margin-top: 1rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    h2 {
-      color: var(--color-primary);
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 3px dashed var(--color-border);
-      padding-bottom: 0.5rem;
-      text-align: center;
-      font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
-      letter-spacing: 0.05em;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    label {
-      font-weight: 600;
-      color: var(--color-secondary);
-      text-align: left;
-      margin-bottom: 0.2rem;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 0.6rem 0.8rem;
-      border: 2px solid var(--color-primary);
-      border-radius: 8px;
-      font-size: 1rem;
-      resize: vertical;
-      transition: border-color 0.3s;
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #faf7fa;
-      color: var(--color-text);
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-      border-color: var(--color-highlight);
-      outline: none;
-    }
-    textarea {
-      min-height: 120px;
-    }
-    button {
-      background-color: var(--color-primary);
-      color: white;
-      font-weight: 700;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 20px;
-      font-size: 1.1rem;
-      font-family: 'Amatic SC', cursive;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      margin-top: 0.5rem;
-    }
-    button:hover, button:focus {
-      background-color: var(--color-secondary);
-      outline: none;
-    }
-    .contact-info {
-      margin-top: 2rem;
-      font-size: 1rem;
-      color: #555;
-      text-align: center;
-    }
-    .contact-info a {
-      color: var(--color-primary);
-      font-weight: 700;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.3s;
-      font-family: 'Amatic SC', cursive;
-    }
-    .contact-info a:hover, .contact-info a:focus {
-      color: var(--color-secondary);
-      text-decoration: underline;
-      outline: none;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 1.1rem;
-        padding: 1.5rem 1rem;
-      }
-      nav a {
-        margin: 0 0.5rem;
-        font-size: 0.9rem;
-        padding: 6px 8px;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      h2 {
-        font-size: 1.4rem;
-      }
-      main {
-        padding: 1.5rem 1rem;
-        margin: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <button class="hamburger" aria-label="開啟選單" aria-controls="mainNav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="nav-links" id="mainNav">
-      <a href="index.html">首頁 Home</a>
-      <a href="products.html">商品區 Products</a>
-      <a href="custom.html">客製代購 Personalized Shopping</a>
-      <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
-      <a href="contact.html" aria-current="page">聯絡我們 Contact</a>
-    </div>
-  </nav>
-
-  <header>
-    <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
-  </header>
-
-  <main>
-    <h2>📬 聯絡我們 Contact</h2>
-    <form action="mailto:your-email@example.com" method="post" enctype="text/plain" id="contact-form">
-      <label for="name">姓名 Name</label>
-      <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required />
-
-      <label for="email">電子郵件 Email</label>
-      <input type="email" id="email" name="email" placeholder="請輸入您的電子郵件" required />
-
-      <label for="message">訊息 Message</label>
-      <textarea id="message" name="message" placeholder="請輸入您的訊息" required></textarea>
-
-      <button type="submit">送出 Submit</button>
-    </form>
-
-    <div class="contact-info">
-      <p>歡迎加入我們的 LINE 社群與私訊聯絡！</p>
-      <p>
-        <a href="https://line.me/ti/g2/bFgF8P3oSCR54GVmgkIYU3Q1tuzKYmPw6SlrlA" target="_blank" rel="noopener">加入 LINE 社群</a> | 
-        <a href="https://line.me/ti/p/cTE_jv9Vcz" target="_blank" rel="noopener">私人一對一聯絡</a>
-      </p>
-    </div>
-  </main>
-  <script>
-    // 三明治選單功能
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if(window.innerWidth <= 650) navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
-</body>
-</html>
-
