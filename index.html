@@ -6,6 +6,7 @@
   <title>密探ㄚ頭代GO - 新加坡馬來西亞代購｜meowbuy</title>
   <meta name="description" content="萌萌喵陪你一起尋寶，代購新加坡與馬來西亞人氣商品。密探ㄚ頭代GO，溫柔陪伴您的代購小密探。" />
   <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="密探ㄚ頭代GO - 新加坡馬來西亞代購｜meowbuy" />
@@ -47,8 +48,8 @@
       margin: 0; padding: 2rem 1.5rem;
       background-color: #f7f0f5;
       color: #6b3a5b;
-      font-size: 1.3rem;
-      line-height: 2.2;
+      font-size: 1.15rem;
+      line-height: 2.1;
       max-width: 720px;
       margin-left: auto;
       margin-right: auto;
@@ -73,7 +74,11 @@
       margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a[aria-current="page"], nav a.active {
+      background-color: #d63384;
+      color: #fff;
     }
     nav a:hover, nav a:focus {
       background-color: #a97fa8;
@@ -111,17 +116,24 @@
     main {
       text-align: center;
     }
+    .section-title {
+      font-size: 1.3rem;
+      color: #d63384;
+      margin: 2.5rem 0 1rem 0;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
     .story-text {
       white-space: pre-wrap;
       text-indent: 2em;
       letter-spacing: 1.2px;
       max-width: 600px;
-      margin: 0 auto 2rem auto;
-      font-family: 'POP Gothic', 'Noto Sans TC', sans-serif;
+      margin: 0 auto 2.2rem auto;
+      font-size: 1.13rem;
     }
     .highlight-text {
       font-family: 'POP Gothic', 'Noto Sans TC', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: #7a4a6d;
       margin: 2.5rem 0 2rem 0;
@@ -134,71 +146,94 @@
     .btn-group {
       text-align: center;
       margin-top: 3rem;
+      margin-bottom: 2.5rem;
     }
     .btn {
       background-color: #b47f9b;
       color: #fff;
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       padding: 14px 36px;
       border-radius: 35px;
       text-decoration: none;
       font-weight: 700;
-      margin: 0 16px;
+      margin: 0 16px 10px;
       box-shadow: 0 6px 14px rgba(180, 127, 155, 0.3);
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s, box-shadow 0.3s;
       display: inline-block;
     }
-    .btn:hover {
-      background-color: #7a4a6d;
+    .btn:hover, .btn:focus {
+      background-color: #d63384;
+      box-shadow: 0 8px 20px rgba(214,51,132,0.20);
+      color: #fff;
     }
     .btn.alt {
       background-color: #d9c7d9;
       color: #7a4a6d;
     }
-    .btn.alt:hover {
+    .btn.alt:hover, .btn.alt:focus {
       background-color: #c4b1c2;
       color: #5e3a57;
     }
     .social-links {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       text-align: center;
     }
     .social-links a {
-      font-size: 2.4rem;
-      margin: 0 18px;
-      color: #b47f9b;
-      text-decoration: none;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 12px;
       transition: color 0.3s ease;
-      font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
     }
-    .social-links a:hover {
-      color: #7a4a6d;
+    .social-links svg {
+      width: 2.1rem;
+      height: 2.1rem;
+      fill: #b47f9b;
+      transition: fill 0.3s;
+    }
+    .social-links a:hover svg,
+    .social-links a:focus svg {
+      fill: #d63384;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.98rem;
+      color: #b47f9b;
+      letter-spacing: 0.7px;
+      padding-bottom: 1.5rem;
     }
     @media (max-width: 600px) {
       body {
-        font-size: 1.1rem;
-        padding: 1.5rem 1rem;
+        font-size: 1rem;
+        padding: 1.5rem 0.5rem;
       }
       header h1 {
         font-size: 2.2rem;
       }
       .banner-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 1.3rem;
+      }
+      .section-title {
+        font-size: 1.08rem;
+        margin: 1.5rem 0 0.7rem 0;
       }
       .highlight-text {
-        font-size: 1.4rem;
-        margin: 2rem 0 1.5rem 0;
+        font-size: 1.15rem;
+        margin: 1.5rem 0 1.2rem 0;
       }
       .btn {
-        font-size: 1.2rem;
-        padding: 12px 28px;
-        margin: 0 10px 15px;
+        font-size: 1rem;
+        padding: 12px 22px;
+        margin: 0 8px 10px;
       }
-      .social-links a {
-        font-size: 2rem;
-        margin: 0 12px;
+      .social-links svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      footer {
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -219,6 +254,7 @@
   </header>
 
   <main>
+    <h2 class="section-title">品牌故事 Brand Story</h2>
     <p class="story-text">
 最初，只是一場旅行。
 旅途中愛上了新加坡的獨特文化與新馬地區的美味好物，每次回台，總會精挑細選幾樣好物，分享給親朋好友。
@@ -246,9 +282,19 @@
     </div>
 
     <div class="social-links" aria-label="社群連結">
-      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">👍</a>
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">
+        <!-- IG SVG -->
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#b47f9b" stroke-width="2"/><circle cx="22" cy="10" r="1.2" fill="#b47f9b"/></svg>
+      </a>
+      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
+        <!-- FB SVG -->
+        <svg viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#b47f9b" stroke-width="2"/><path d="M20 16h-2v-2c0-0.55 0.45-1 1-1h1v-3h-2.5C15.12 10 14 11.12 14 12.5V14h-2v3h2v7h3v-7h2l0.5-3z" fill="#b47f9b"/></svg>
+      </a>
     </div>
   </main>
+
+  <footer>
+    © 2025 meowbuy | 聯絡信箱：<a href="mailto:hello@meowbuy.com" style="color:#b47f9b;text-decoration:underline;">hello@meowbuy.com</a>
+  </footer>
 </body>
 </html>
