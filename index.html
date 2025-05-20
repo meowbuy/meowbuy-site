@@ -59,13 +59,17 @@
       top: 0; left: 0; right: 0;
       background-color: #f7f0f5;
       box-shadow: 0 2px 8px rgba(183, 126, 154, 0.15);
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
       z-index: 1000;
       height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
     }
     nav a {
       color: #b47f9b;
@@ -73,10 +77,11 @@
       font-weight: 700;
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
       font-size: 1.1rem;
-      margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
       transition: background-color 0.3s, color 0.3s;
+      margin: 0 0.5rem;
+      display: inline-block;
     }
     nav a[aria-current="page"], nav a.active {
       background-color: #d63384;
@@ -86,6 +91,64 @@
       background-color: #a97fa8;
       color: #fff;
       outline: none;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 4px;
+      margin: 4px 0;
+      background: #b47f9b;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    @media (max-width: 650px) {
+      nav {
+        justify-content: flex-end;
+        padding: 0 0.5rem;
+        height: 54px;
+      }
+      .nav-links {
+        position: absolute;
+        top: 54px; right: 0; left: 0;
+        background: #f7f0f5;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 4px 16px rgba(180, 127, 155, 0.08);
+        display: none;
+      }
+      .nav-links.open {
+        display: flex;
+        animation: fadeIn 0.2s;
+      }
+      nav a {
+        font-size: 1.08rem;
+        padding: 14px 0;
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid #f0e3f0;
+        text-align: center;
+        width: 100%;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px);}
+      to { opacity: 1; transform: translateY(0);}
     }
     header {
       margin-top: 60px;
@@ -210,21 +273,6 @@
         font-size: 1rem;
         padding: 1.5rem 0.5rem;
       }
-      nav {
-        flex-wrap: wrap;
-        padding: 0.5rem 0;
-        height: auto;
-      }
-      nav a {
-        flex: 1 1 46%;
-        min-width: 120px;
-        margin: 4px 4px;
-        font-size: 1rem;
-        padding: 10px 0;
-        text-align: center;
-        border-radius: 16px;
-        box-sizing: border-box;
-      }
       header h1 {
         font-size: 2.2rem;
       }
@@ -257,11 +305,18 @@
 </head>
 <body>
   <nav>
-    <a href="index.html" aria-current="page">首頁 Home</a>
-    <a href="products.html">商品區 Products</a>
-    <a href="custom.html">客製代購 Personalized Shopping</a>
-    <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
-    <a href="contact.html">聯絡我們 Contact</a>
+    <button class="hamburger" aria-label="開啟選單" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="mainNav">
+      <a href="index.html" aria-current="page">首頁 Home</a>
+      <a href="products.html">商品區 Products</a>
+      <a href="custom.html">客製代購 Personalized Shopping</a>
+      <a href="customer-love.html">萌客回饋 Customer Love 💖</a>
+      <a href="contact.html">聯絡我們 Contact</a>
+    </div>
   </nav>
 
   <header>
@@ -314,5 +369,20 @@
   <footer>
     © 2025 meowbuy | 聯絡信箱：<a href="mailto:hello@meowbuy.com" style="color:#b47f9b;text-decoration:underline;">hello@meowbuy.com</a>
   </footer>
+  <script>
+    // 三明治選單
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(window.innerWidth <= 650) navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
