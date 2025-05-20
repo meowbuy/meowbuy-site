@@ -50,7 +50,7 @@
       margin: 0 1rem;
       padding: 6px 14px;
       border-radius: 20px;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.15s;
       background: none;
     }
     nav a[aria-current="page"], nav a.active {
@@ -60,6 +60,8 @@
     nav a:hover, nav a:focus {
       background-color: var(--color-highlight);
       color: #fff;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.10);
+      transform: scale(1.07);
       outline: none;
     }
     .hamburger {
@@ -102,10 +104,12 @@
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
     header {
       background-color: #ffe4ec;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 2.5rem 1rem;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       margin-top: 60px;
+      position: relative;
+      min-height: 120px;
     }
     header h1 {
       font-family: 'POP Gothic', 'Noto Sans TC', cursive, sans-serif;
@@ -113,6 +117,24 @@
       color: var(--color-secondary);
       margin: 0;
       line-height: 1.3;
+      animation: floatTitle 2.5s infinite alternate;
+    }
+    @keyframes floatTitle {
+      from { transform: translateY(0);}
+      to { transform: translateY(-8px);}
+    }
+    .brand-cat {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      width: 54px;
+      height: 54px;
+      z-index: 2;
+      animation: catWiggle 2.5s infinite alternate;
+    }
+    @keyframes catWiggle {
+      from { transform: rotate(-5deg);}
+      to { transform: rotate(7deg);}
     }
     main {
       padding: 20px 1rem 40px;
@@ -135,6 +157,7 @@
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: flex-start;
+      margin-bottom: 2rem;
     }
     .product-card {
       background-color: #ffffff;
@@ -145,10 +168,11 @@
       min-width: 320px;
       box-sizing: border-box;
       box-shadow: 2px 2px 12px rgba(0,0,0,0.07);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.22s, box-shadow 0.22s;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 1.5em;
     }
     .product-card:hover {
       transform: translateY(-8px) scale(1.04);
@@ -206,6 +230,73 @@
       margin: 0.2rem 0;
       text-align: center;
     }
+    .product-card .hot {
+      display: inline-block;
+      background: var(--color-highlight);
+      color: #fff;
+      font-size: 0.95em;
+      border-radius: 12px;
+      padding: 0.2em 0.7em;
+      margin-bottom: 0.5em;
+      margin-right: 0.2em;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(214,51,132,0.08);
+      font-weight: 700;
+      animation: hotPulse 1.2s infinite alternate;
+    }
+    @keyframes hotPulse {
+      from { background: var(--color-highlight);}
+      to { background: #e87aa7;}
+    }
+    .social-links {
+      margin-top: 2.5rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(180, 127, 155, 0.08);
+      font-size: 1.7rem;
+      color: #fff;
+      border: none;
+    }
+    .social-links a:hover, .social-links a:focus {
+      background: var(--color-highlight);
+      transform: scale(1.09);
+      color: #fff;
+    }
+    .social-links svg {
+      width: 1.6em;
+      height: 1.6em;
+      fill: #fff;
+      display: block;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.98rem;
+      color: var(--color-primary);
+      letter-spacing: 0.7px;
+      padding-bottom: 1.5rem;
+      position: relative;
+    }
+    .footer-cat {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
+      margin-bottom: -7px;
+      width: 32px;
+      height: 32px;
+    }
     @media (max-width: 1000px) {
       .product-card { width: calc(50% - 2rem); min-width: 0; }
       .slider-main-img { height: 38vw; min-height: 120px; }
@@ -222,23 +313,24 @@
         object-fit: contain; background: #f6f6f6; display: block;
       }
     }
-    @media (max-width: 650px) {
-      nav { justify-content: flex-end; height: 54px; }
-      .nav-links {
-        position: absolute; top: 54px; right: 0; left: 0;
-        background: var(--color-bg);
-        flex-direction: column; align-items: stretch; gap: 0;
-        box-shadow: 0 4px 16px rgba(180, 127, 155, 0.08);
-        display: none;
-      }
-      .nav-links.open { display: flex; animation: fadeIn 0.2s; }
+    @media (max-width: 600px) {
+      body { font-size: 1rem; padding: 1.5rem 0.5rem; }
+      nav { flex-wrap: wrap; padding: 0.5rem 0; height: auto; }
       nav a {
-        font-size: 1.08rem; padding: 14px 0; margin: 0; border-radius: 0;
-        border-bottom: 1px solid var(--color-border); text-align: center; width: 100%;
+        flex: 1 1 46%;
+        min-width: 120px;
+        margin: 4px 4px;
+        font-size: 1rem;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 16px;
+        box-sizing: border-box;
       }
-      .hamburger { display: flex; }
+      header h1 { font-size: 2.2rem; }
+      .social-links a { width: 38px; height: 38px; font-size: 1.3rem; }
+      .social-links svg { width: 1.2em; height: 1.2em; }
+      footer { font-size: 0.85rem; }
     }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px);} to { opacity: 1; transform: translateY(0);} }
   </style>
 </head>
 <body>
@@ -255,13 +347,24 @@
     </div>
   </nav>
   <header>
-    <h1>🌸 meowbuy｜🎀密探ㄚ頭代GO🎀 新加坡・馬來西亞代購 🌸</h1>
+    <h1>📦 商品區 Products</h1>
+    <!-- 品牌小喵 SVG -->
+    <svg class="brand-cat" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="44" rx="22" ry="14" fill="#fff" stroke="#b47f9b" stroke-width="2"/>
+      <ellipse cx="32" cy="34" rx="14" ry="14" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+      <ellipse cx="26" cy="34" rx="2.5" ry="2.5" fill="#b47f9b"/>
+      <ellipse cx="38" cy="34" rx="2.5" ry="2.5" fill="#b47f9b"/>
+      <ellipse cx="32" cy="38" rx="4.5" ry="2.5" fill="#d63384"/>
+      <polygon points="18,21 24,10 28,23" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+      <polygon points="46,21 40,10 36,23" fill="#fff7fa" stroke="#b47f9b" stroke-width="2"/>
+    </svg>
   </header>
   <main>
-    <h2>📦 商品區 Products</h2>
+    <h2>新加坡・馬來西亞人氣商品</h2>
     <div class="product-grid">
 
       <div class="product-card">
+        <span class="hot">熱賣</span>
         <div class="slider" data-images='["images/328laksa袋裝圖.jpg","images/328laksa袋裝圖2.jpg","images/328laksa袋裝圖3.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
           <img src="images/328laksa袋裝圖.jpg" alt="328 Laksa" class="slider-main-img" />
@@ -272,7 +375,6 @@
         <p>價格：NT$ 380</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/beryl\'s 罐裝 杏仁苦甜巧克力（黑棕蓋）450g.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -284,7 +386,6 @@
         <p>價格：NT$ 390</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/beryl\'s 罐裝 杏仁綜合口味巧克力（粉紅蓋）370g.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -296,7 +397,6 @@
         <p>價格：NT$ 390</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g1.jpg","images/Hock Kee (福氣安康) 傳統海南咖椰醬 220g2.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -308,7 +408,6 @@
         <p>價格：NT$ 290</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/Hock Kee (福氣安康) 香蘭咖椰醬 220g1.jpg","images/Hock Kee (福氣安康) 香蘭咖椰醬 220g2.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -320,7 +419,6 @@
         <p>價格：NT$ 290</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/LFC_Hello_Kitty.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -332,7 +430,6 @@
         <p>價格：NT$ 290</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/華陽香椰咖椰醬 270g.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -344,7 +441,6 @@
         <p>價格：NT$ 300</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/華陽斑蘭咖椰醬 270g.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -356,7 +452,6 @@
         <p>價格：NT$ 300</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
       <div class="product-card">
         <div class="slider" data-images='["images/Houten Chilli Tapioca Chips袋8包35g.jpg","images/Houten Chilli Tapioca Chips袋8包35g2.jpg"]'>
           <button class="slider-arrow left">&#8592;</button>
@@ -368,9 +463,22 @@
         <p>價格：NT$ 260</p>
         <p style="color:var(--color-highlight);">【預購商品･請先詢問】</p>
       </div>
-
+    </div>
+    <div class="social-links" aria-label="社群連結">
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="#fff" stroke-width="2" fill="none"/><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="10" r="1.2" fill="#fff"/></svg>
+      </a>
+      <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="6" fill="none" stroke="#fff" stroke-width="2"/><path d="M20 16h-2v-2c0-0.55 0.45-1 1-1h1v-3h-2.5C15.12 10 14 11.12 14 12.5V14h-2v3h2v7h3v-7h2l0.5-3z" fill="#fff"/></svg>
+      </a>
     </div>
   </main>
+  <footer>
+    © 2025 meowbuy | 聯絡信箱：<a href="mailto:hello@meowbuy.com" style="color:var(--color-primary);text-decoration:underline;">hello@meowbuy.com</a>
+    <span class="footer-cat">
+      <svg viewBox="0 0 32 32"><ellipse cx="16" cy="20" rx="10" ry="6" fill="#fff" stroke="#b47f9b" stroke-width="1.5"/><ellipse cx="16" cy="14" rx="6" ry="6" fill="#fff7fa" stroke="#b47f9b" stroke-width="1.5"/><ellipse cx="13" cy="14" rx="1.2" ry="1.2" fill="#b47f9b"/><ellipse cx="19" cy="14" rx="1.2" ry="1.2" fill="#b47f9b"/><ellipse cx="16" cy="17" rx="2" ry="1" fill="#d63384"/></svg>
+    </span>
+  </footer>
   <script>
     // 三明治選單
     const hamburger = document.querySelector('.hamburger');
