@@ -57,13 +57,15 @@
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: 60px;
       background-color: #f7f0f5;
       box-shadow: 0 2px 8px rgba(183, 126, 154, 0.15);
       display: flex;
+      flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      height: 60px;
+      padding: 0;
     }
     nav a {
       color: #b47f9b;
@@ -207,6 +209,21 @@
       body {
         font-size: 1rem;
         padding: 1.5rem 0.5rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        padding: 0.5rem 0;
+        height: auto;
+      }
+      nav a {
+        flex: 1 1 46%;
+        min-width: 120px;
+        margin: 4px 4px;
+        font-size: 1rem;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 16px;
+        box-sizing: border-box;
       }
       header h1 {
         font-size: 2.2rem;
